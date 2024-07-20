@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="anywhere_overlay API docs, for the Dart programming language.">
+  <title>anywhere_overlay - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/gktirkha/anywhere_overlay">anywhere_overlay package</a></li>
+  </ol>
+  <div class="self-name">anywhere_overlay</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="anywhereoverlay">AnywhereOverlay</h1>
+<p><code>anywhere_overlay</code> is a Flutter package that provides a simple and flexible way to show overlays anywhere in your app's UI.</p>
+<blockquote>
+<p>If you prefer, You may find the dart-doc version of the documentation <a href="https://gktirkha.github.io/flutter_packages_doc/anywhere_overlay/">here</a></p>
+</blockquote>
+<h2 id="getting-started">Getting Started</h2>
+<p>To use this package, add <code>anywhere_overlay</code> as a dependency in your <code>pubspec.yaml</code> file.</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  anywhere_overlay: ^latestVersion
+</code></pre>
+<h2 id="import">Import</h2>
+<pre class="language-dart"><code class="language-dart">import 'package:anywhere_overlay/anywhere_overlay.dart';
+</code></pre>
+<h2 id="usage">Usage</h2>
+<p>in your MaterialApp/CupertinoApp initialize AnywhereOverlay :</p>
+<pre class="language-dart"><code class="language-dart">MaterialApp(
+      home: const Scaffold(
+        body: Center(
+          child: Text('Hello World!'),
+        ),
+      ),
+      // Add This Line To Initialize AnyWhereOverlay
+      builder: AnyWhereOverlay.init(),
+    )
+</code></pre>
+<h3 id="show-overlay">Show OverLay</h3>
+<p>whenever you want to show the overlay call <code>AnyWhereOverlay.show(Widget child)</code> method</p>
+<pre class="language-dart"><code class="language-dart">class HomeWidget extends StatelessWidget {
+  const HomeWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Method To show Overlay
+            AnyWhereOverlay.show(
+              child: Container(
+                height: 100,
+                width: 100,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(.5),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const CircularProgressIndicator(strokeWidth: 2),
+              ),
+            );
+          },
+          child: const Text("Show Overlay"),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+<h3 id="dismiss-overlay">Dismiss OverLay</h3>
+<p>whenever you want to dismiss the overlay call <code>AnyWhereOverlay.dismiss()</code> Method</p>
+<pre class="language-dart"><code class="language-dart">class HomeWidget extends StatelessWidget {
+  const HomeWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Method To show Overlay
+            AnyWhereOverlay.show(
+              child: Container(
+                height: 100,
+                width: 100,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(.5),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const CircularProgressIndicator(strokeWidth: 2),
+              ),
+            );
+
+            Future.delayed(
+              const Duration(seconds: 2),
+              () {
+                // Method To Hide Overlay
+                AnyWhereOverlay.dismiss();
+              },
+            );
+          },
+          child: const Text("Show Overlay"),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+<h2 id="styling">Styling</h2>
+<p>Package Offers Three Configurations</p>
+<ol>
+<li><strong>animationDuration:</strong> Duration Of Opacity Animation While Showing Or Dismissing The Overlay, <strong>Default:</strong> <code>200 milliseconds</code>.</li>
+<li><strong>overlayBgColor:</strong> Color of Overlay Background, <strong>Default:</strong> <code>Colors.black.withOpacity(.70)</code>.</li>
+<li><strong>alignment</strong>: Alignment for The Top/Child Widget, <strong>Default:</strong> <code>Alignment.center</code></li>
+</ol>
+<h3 id="to-configure-there-are-three-ways">To configure There are Three Ways,</h3>
+<ol>
+<li>
+<p>While Calling init method</p>
+<pre class="language-dart"><code class="language-dart">void main() {
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: const Scaffold(
+        body: Center(
+          child: Text('Hello World!'),
+        ),
+      ),
+      // Styling During initialization
+      builder: AnyWhereOverlay.init(
+        alignment: Alignment.bottomCenter,
+        animationDuration: const Duration(seconds: 1),
+        overlayBgColor: Colors.blue.withOpacity(.7),
+      ),
+    );
+  }
+}
+</code></pre>
+</li>
+<li>
+<p>Using <code>AnyWhereOverlay.configure()</code> Method</p>
+<pre class="language-dart"><code class="language-dart">class HomeWidget extends StatelessWidget {
+  const HomeWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Configuring Overlay Settings Using Configure Method
+            AnyWhereOverlay.configure(
+              alignment: Alignment.bottomCenter,
+              animationDuration: const Duration(milliseconds: 500),
+              overlayBgColor: Colors.black.withOpacity(.5),
+            );
+
+            // Method To show Overlay
+            AnyWhereOverlay.show(
+              child: Container(
+                height: 100,
+                width: 100,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(.5),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const CircularProgressIndicator(strokeWidth: 2),
+              ),
+            );
+
+            Future.delayed(
+              const Duration(seconds: 2),
+              () {
+                // Method To Hide Overlay
+                AnyWhereOverlay.dismiss();
+              },
+            );
+          },
+          child: const Text("Show Overlay"),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+</li>
+<li>
+<p>Using instance</p>
+<pre class="language-dart"><code class="language-dart">class HomeWidget extends StatelessWidget {
+  const HomeWidget({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            // Configuring Overlay Settings Using Instance
+            final AnyWhereOverlay instance = AnyWhereOverlay.instance;
+            instance.overlayBgColor = Colors.red.withOpacity(.5);
+            instance.animationDuration = const Duration(seconds: 1);
+            instance.alignment = Alignment.topCenter;
+
+            // Method To show Overlay
+            AnyWhereOverlay.show(
+              child: Container(
+                height: 100,
+                width: 100,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(.5),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const CircularProgressIndicator(strokeWidth: 2),
+              ),
+            );
+
+            Future.delayed(
+              const Duration(seconds: 2),
+              () {
+                // Method To Hide Overlay
+                AnyWhereOverlay.dismiss();
+              },
+            );
+          },
+          child: const Text("Show Overlay"),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+</li>
+</ol>
+<blockquote>
+<p>instance.overlayBgColor, instance.animationDuration, instance.alignment All are static Fields changing by any method will result the change globally</p>
+</blockquote>
+<h2 id="additional-arguments">Additional Arguments</h2>
+<h3 id="1-barrierdismissible-in-show-method-default-false">1. <em>barrierDismissible</em> in show method <em>(default false)</em></h3>
+<p>if set to true, user can dismiss the overlay by tapping the Outside the top widget</p>
+<pre class="language-dart"><code class="language-dart">AnyWhereOverlay.show(
+              barrierDismissible: true,
+              child: Container(
+                height: 100,
+                width: 100,
+                padding: const EdgeInsets.all(20),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(.5),
+                  borderRadius: BorderRadius.circular(12),
+                ),
+                child: const CircularProgressIndicator(strokeWidth: 2),
+              ),
+            )
+</code></pre>
+<blockquote>
+<p>barrierDismissible arguments is not static, one must set this explicitly every time</p>
+</blockquote>
+<h3 id="2-builder-in-dismiss-init-method-default-null">2. <em>builder</em> in dismiss init method <em>(default null)</em></h3>
+<p>there may be times when you need to use custom builder in material app, no need to worry, you can pass builder in init method, Packages. Package will wrap builder's child with Overlay entry, and you can still use your builder</p>
+<p>Implementation in code (init method)</p>
+<pre class="language-dart"><code class="language-dart">static TransitionBuilder init({TransitionBuilder? builder}) {
+  return (context, child) =&gt; builder != null
+      ? builder(
+          context,
+          AnywhereOverlayWrapper(child: child),
+        )
+      : AnywhereOverlayWrapper(child: child);
+}
+</code></pre>
+<h1 id="contributions">Contributions</h1>
+<p>Contributions are welcome! Please submit issues and pull requests on the <a href="https://github.com/gktirkha/anywhere_overlay">GitHub repository.</a></p>
+<h1 id="license">License</h1>
+<p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for more details.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="anywhere_overlay">
+  <span class="name"><a href="anywhere_overlay/anywhere_overlay-library.html">anywhere_overlay</a></span> 
+
+</dt>
+<dd>A library for displaying customizable overlays anywhere on the screen in a Flutter application.
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="https://github.com/gktirkha/anywhere_overlay">anywhere_overlay package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">anywhere_overlay</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="anywhere_overlay/anywhere_overlay-library.html">anywhere_overlay</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    anywhere_overlay
+      1.0.3
+  </span>
+
+  
+</footer>
+
+
+<script src="../dark_theme.js"></script>
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

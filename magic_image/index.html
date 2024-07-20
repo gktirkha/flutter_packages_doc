@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="magic_image API docs, for the Dart programming language.">
+  <title>magic_image - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/gktirkha/magic_image">magic_image package</a></li>
+  </ol>
+  <div class="self-name">magic_image</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="magicimage">MagicImage</h1>
+<p><code>MagicImage</code> is a Flutter Package that displays an image from a given path, with support for both network and asset images, including SVG format. It provides various customization options such as fit, color, dimensions, and placeholder/error widgets.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Display images from both network URLs and local asset paths.</li>
+<li>Support for SVG images.</li>
+<li>Customizable fit, color, dimensions, and more.</li>
+<li>Placeholder and error widgets for loading and error states.</li>
+<li>Optional box decoration for the container holding the image.</li>
+<li>Customizable loading indicator size.</li>
+</ul>
+<blockquote>
+<p>If you prefer, You may find the dart-doc version of the documentation <a href="https://gktirkha.github.io/flutter_packages_doc/magic_image/">here</a></p>
+</blockquote>
+<h2 id="installation">Installation</h2>
+<p>To use <code>MagicImage</code> in your Flutter project, add the necessary dependencies to your <code>pubspec.yaml</code> file:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  magic_image:
+    git: https://github.com/gktirkha/magic_image
+</code></pre>
+<h2 id="usage">Usage</h2>
+<h3 id="basic-usage">Basic Usage</h3>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+import 'package:magic_image/magic_image.dart'; 
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('MagicImage Example'),
+      ),
+      body: Center(
+        child: MagicImage('assets/images/sample.png'),
+      ),
+    );
+  }
+}
+
+</code></pre>
+<h2 id="network-image-with-placeholder-and-error-widget">Network Image with Placeholder and Error Widget</h2>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+import 'package:magic_image/magic_image.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('MagicImage Example'),
+      ),
+      body: Center(
+        child: MagicImage('assets/images/sample.png'),
+      ),
+    );
+  }
+}
+
+</code></pre>
+<h2 id="svg-image-with-custom-color-and-fit">SVG Image with Custom Color and Fit</h2>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+import 'package:magic_image/magic_image.dart';
+
+class MyWidget extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('MagicImage Example'),
+      ),
+      body: Center(
+        child: MagicImage(
+          'assets/images/sample.svg',
+          color: Colors.red,
+          fit: BoxFit.cover,
+        ),
+      ),
+    );
+  }
+}
+
+</code></pre>
+<h2 id="parameters">Parameters</h2>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>path</code></td>
+<td><code>String</code></td>
+<td>The path of the image to display (URL or local asset path).</td>
+</tr>
+<tr>
+<td><code>fit</code></td>
+<td><code>BoxFit?</code></td>
+<td>How to inscribe the image into the space allocated during layout.</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td><code>double?</code></td>
+<td>The height of the image.</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td><code>double?</code></td>
+<td>The width of the image.</td>
+</tr>
+<tr>
+<td><code>squareDimension</code></td>
+<td><code>double?</code></td>
+<td>If specified, the image will be rendered with this square dimension.</td>
+</tr>
+<tr>
+<td><code>placeholderWidget</code></td>
+<td><code>Widget?</code></td>
+<td>A widget to display while the image is loading.</td>
+</tr>
+<tr>
+<td><code>errorWidget</code></td>
+<td><code>Widget?</code></td>
+<td>A widget to display if an error occurs while loading the image.</td>
+</tr>
+<tr>
+<td><code>svgPlaceHolder</code></td>
+<td><code>Widget?</code></td>
+<td>A widget to display as a placeholder while loading an SVG image.</td>
+</tr>
+<tr>
+<td><code>repeat</code></td>
+<td><code>ImageRepeat</code></td>
+<td>How to paint any portions of the image that are not covered by the source image.</td>
+</tr>
+<tr>
+<td><code>color</code></td>
+<td><code>Color?</code></td>
+<td>The color to blend with the image.</td>
+</tr>
+<tr>
+<td><code>blendMode</code></td>
+<td><code>BlendMode?</code></td>
+<td>The blend mode to apply when blending the image with the color.</td>
+</tr>
+<tr>
+<td><code>colorFilter</code></td>
+<td><code>ColorFilter?</code></td>
+<td>A color filter to apply to the image.</td>
+</tr>
+<tr>
+<td><code>boxDecoration</code></td>
+<td><code>BoxDecoration?</code></td>
+<td>A decoration to apply to the container holding the image.</td>
+</tr>
+<tr>
+<td><code>defaultPlaceHolderSize</code></td>
+<td><code>double?</code></td>
+<td>The size of the default loading indicator.</td>
+</tr>
+<tr>
+<td><code>clipBehavior</code></td>
+<td><code>Clip?</code></td>
+<td>Clip Behavior For image</td>
+</tr>
+</tbody>
+</table>
+<h2 id="contributing">Contributing</h2>
+<p>Contributions are welcome! Please open an issue or submit a pull request on <a href="https://github.com/gktirkha/magic_image">GitHub.</a></p>
+<h2 id="license">License</h2>
+<p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for more details.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="magic_image">
+  <span class="name"><a href="magic_image/magic_image-library.html">magic_image</a></span> 
+
+</dt>
+<dd><a href="magic_image/magic_image-library.html">magic_image</a> is a Flutter Package that displays an image from a given path, with support for both network and asset images, including SVG format.
+It provides various customization options such as fit, color, dimensions, and placeholder/error widgets.
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="https://github.com/gktirkha/magic_image">magic_image package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">magic_image</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="magic_image/magic_image-library.html">magic_image</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    magic_image
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+<script src="../dark_theme.js"></script>
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+

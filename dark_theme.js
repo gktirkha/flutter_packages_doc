@@ -1,0 +1,1 @@
+self.window.localStorage.setItem("colorTheme", "true")

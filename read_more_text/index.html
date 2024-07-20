@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="read_more_text API docs, for the Dart programming language.">
+  <title>read_more_text - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+
+  
+</head>
+
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+
+<div id="overlay-under-drawer"></div>
+
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/gktirkha/read_more_text">read_more_text package</a></li>
+  </ol>
+  <div class="self-name">read_more_text</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="readmoretext">ReadMoreText</h1>
+<p><code>ReadMoreText</code> is a Flutter widget that allows you to display long text with a "Read more" or "Show less" feature. This widget truncates the text to a specified number of lines and provides a way to expand or collapse the text, making it ideal for handling lengthy content in a user-friendly manner.</p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Display long text with a truncation feature.</li>
+<li>Customizable "Show more" and "Show less" labels.</li>
+<li>Support for custom text styles and link styles.</li>
+</ul>
+<blockquote>
+<p>If you prefer, You may find the dart-doc version of the documentation <a href="https://gktirkha.github.io/flutter_packages_doc/read_more_text/">here</a></p>
+</blockquote>
+<h2 id="installation">Installation</h2>
+<p>Add <code>read_more_text</code> to your <code>pubspec.yaml</code> file:</p>
+<pre class="language-yaml"><code class="language-yaml">dependencies:
+  read_more_text:
+    git: https://github.com/gktirkha/read_more_text
+</code></pre>
+<h1 id="usage">Usage</h1>
+<p>To use the ReadMoreText widget, simply include it in your widget tree and configure it with the desired properties.</p>
+<pre class="language-dart"><code class="language-dart">import 'dart:developer';
+
+import 'package:flutter/material.dart';
+import 'package:read_more_text/read_more_text.dart';
+
+void main() {
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final GlobalKey&lt;ReadMoreTextState&gt; key = GlobalKey&lt;ReadMoreTextState&gt;();
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: Column(
+          children: [
+            ReadMoreText(
+              key: key,
+              text:
+                  'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+              maxLines: 1,
+              showMoreLabel: '... Read more',
+              showLessLabel: 'Show less',
+              textStyle: const TextStyle(fontSize: 16),
+              linkTextStyle: const TextStyle(
+                  color: Colors.blue, fontWeight: FontWeight.bold),
+            ),
+            ElevatedButton(
+                onPressed: () {
+                  log(key.currentState!.isExpanded.toString());
+                },
+                child: const Text("hello"))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+</code></pre>
+<h1 id="properties">Properties</h1>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Description</th>
+<th>Default Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td><code>String</code></td>
+<td>The text content to display.</td>
+<td>-</td>
+</tr>
+<tr>
+<td><code>maxLines</code></td>
+<td><code>int</code></td>
+<td>The maximum number of lines to display when collapsed.</td>
+<td><code>2</code></td>
+</tr>
+<tr>
+<td><code>textStyle</code></td>
+<td><code>TextStyle?</code></td>
+<td>The style of the text content.</td>
+<td><code>null</code></td>
+</tr>
+<tr>
+<td><code>showMoreLabel</code></td>
+<td><code>String</code></td>
+<td>The label for the "Show more" link.</td>
+<td><code>'Show more'</code></td>
+</tr>
+<tr>
+<td><code>showLessLabel</code></td>
+<td><code>String</code></td>
+<td>The label for the "Show less" link.</td>
+<td><code>'Show less'</code></td>
+</tr>
+<tr>
+<td><code>linkTextStyle</code></td>
+<td><code>TextStyle?</code></td>
+<td>The style of the "Show more" and "Show less" links.</td>
+<td><code>null</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="customization">Customization</h1>
+<table>
+<thead>
+<tr>
+<th>Customization</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text Style</strong></td>
+<td>Customize the appearance of the text content using the <code>textStyle</code> property.</td>
+<td><code>TextStyle(fontSize: 16)</code></td>
+</tr>
+<tr>
+<td><strong>Link Style</strong></td>
+<td>Customize the appearance of the "Show more" and "Show less" links using the <code>linkTextStyle</code> property.</td>
+<td><code>TextStyle(color: Colors.blue, fontWeight: FontWeight.bold)</code></td>
+</tr>
+<tr>
+<td><strong>Labels</strong></td>
+<td>Customize the labels for expanding and collapsing the text using <code>showMoreLabel</code> and <code>showLessLabel</code>.</td>
+<td><code>showMoreLabel: 'Read more', showLessLabel: 'Show less'</code></td>
+</tr>
+</tbody>
+</table>
+<h1 id="contributions">Contributions</h1>
+<p>Contributions are welcome! Please submit issues and pull requests on the <a href="https://github.com/gktirkha/read_more_text">GitHub repository.</a></p>
+<h1 id="license">License</h1>
+<p>This project is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for more details.</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="read_more_text">
+  <span class="name"><a href="read_more_text/read_more_text-library.html">read_more_text</a></span> 
+
+</dt>
+<dd>A library for displaying text with a "Read more" and "Show less" feature.
+</dd>
+
+        </dl>
+      </section>
+
+  </div> <!-- /.main-content -->
+
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="https://github.com/gktirkha/read_more_text">read_more_text package</a></li>
+</ol>
+
+
+    <h5 class="hidden-xs"><span class="package-name">read_more_text</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="read_more_text/read_more_text-library.html">read_more_text</a></li>
+</ol>
+
+  </div>
+
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+
+</main>
+
+<footer>
+  <span class="no-break">
+    read_more_text
+      0.0.1
+  </span>
+
+  
+</footer>
+
+
+<script src="../dark_theme.js"></script>
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+
+
+</body>
+
+</html>
+
