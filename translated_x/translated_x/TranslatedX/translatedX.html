@@ -64,12 +64,13 @@
       
 
 <span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
-<span class="name ">translatedX</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="translatedX-param-style"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">style</span>, </span></li>
+<span class="name ">translatedX</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="translatedX-param-placeholder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">placeholder</span>, </span></li>
+<li><span class="parameter" id="translatedX-param-style"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextStyle-class.html">TextStyle</a>?</span> <span class="parameter-name">style</span>, </span></li>
 <li><span class="parameter" id="translatedX-param-overflow"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/TextOverflow.html">TextOverflow</a>?</span> <span class="parameter-name">overflow</span>, </span></li>
 <li><span class="parameter" id="translatedX-param-maxLines"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxLines</span>, </span></li>
 <li><span class="parameter" id="translatedX-param-textAlign"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/TextAlign.html">TextAlign</a>?</span> <span class="parameter-name">textAlign</span>, </span></li>
 <li><span class="parameter" id="translatedX-param-locale"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Locale-class.html">Locale</a>?</span> <span class="parameter-name">locale</span>, </span></li>
-<li><span class="parameter" id="translatedX-param-selectionColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-ui/Color-class.html">Color</a>?</span> <span class="parameter-name">selectionColor</span>, </span></li>
+<li><span class="parameter" id="translatedX-param-selectionColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a>?</span> <span class="parameter-name">selectionColor</span>, </span></li>
 <li><span class="parameter" id="translatedX-param-semanticsLabel"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">semanticsLabel</span>, </span></li>
 <li><span class="parameter" id="translatedX-param-softWrap"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">softWrap</span>, </span></li>
 <li><span class="parameter" id="translatedX-param-strutStyle"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/StrutStyle-class.html">StrutStyle</a>?</span> <span class="parameter-name">strutStyle</span>, </span></li>
@@ -82,6 +83,9 @@
 <li><span class="parameter" id="translatedX-param-bottomMargin"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">bottomMargin</span> = <span class="default-value">0.0</span>, </span></li>
 <li><span class="parameter" id="translatedX-param-leftMargin"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">leftMargin</span> = <span class="default-value">0.0</span>, </span></li>
 <li><span class="parameter" id="translatedX-param-rightMargin"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">rightMargin</span> = <span class="default-value">0.0</span>, </span></li>
+<li><span class="parameter" id="translatedX-param-marginIfNull"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">marginIfNull</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="translatedX-param-showPlaceholderIfEmpty"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showPlaceholderIfEmpty</span> = <span class="default-value">false</span>, </span></li>
+<li><span class="parameter" id="translatedX-param-ipsumInDebug"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">ipsumInDebug</span> = <span class="default-value">true</span>, </span></li>
 </ol>})
 
       
@@ -94,6 +98,7 @@
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">Widget translatedX({
+  String? placeholder,
   TextStyle? style,
   TextOverflow? overflow,
   int? maxLines,
@@ -112,14 +117,26 @@
   double bottomMargin = 0.0,
   double leftMargin = 0.0,
   double rightMargin = 0.0,
+  bool marginIfNull = false,
+  bool showPlaceholderIfEmpty = false,
+  bool ipsumInDebug = true,
 }) {
   final EdgeInsets margin =
       EdgeInsets.fromLTRB(leftMargin, topMargin, rightMargin, bottomMargin);
+  String? textToShow = this ?? placeholder;
+  if (kDebugMode &amp;&amp; textToShow == null &amp;&amp; ipsumInDebug) textToShow = &#39;ipsum&#39;;
+
+  if ((textToShow == null || textToShow.isEmpty) &amp;&amp; !showPlaceholderIfEmpty) {
+    return Container(
+      margin: marginIfNull ? margin : null,
+      child: const SizedBox.shrink(),
+    );
+  }
 
   return Container(
     margin: margin,
     child: Text(
-      tr,
+      textToShow!.tr,
       locale: locale,
       maxLines: maxLines,
       overflow: overflow,
@@ -159,7 +176,7 @@
 </ol>
 
 
-    <h5>TranslatedX extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></h5>
+    <h5>TranslatedX extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
 

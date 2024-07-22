@@ -52,7 +52,7 @@
       
 <section class="desc markdown">
   <h1 id="translated_x">translated_x</h1>
-<p><code>translated_x</code> is a Dart library that provides an extension on the <code>String</code> class for easy translation and customization of text widgets in Flutter applications. It simplifies the creation of <code>Text</code> widgets with translation capabilities and customizable margins.</p>
+<p><code>translated_x</code> is a Dart library that provides an extension on the <code>String?</code> class for easy translation and customization of text widgets in Flutter applications. It simplifies the creation of <code>Text</code> widgets with translation capabilities and customizable margins.</p>
 <blockquote>
 <p>This Library is  designed and tested only on get (getx state management) translation</p>
 </blockquote>
@@ -99,26 +99,31 @@ class MyApp extends StatelessWidget {
   }
 }
 </code></pre>
-<h1 id="parameters">Parameters</h1>
+<h1 id="parameters">Parameters:</h1>
 <ol>
-<li>style: The text style to apply to the text.</li>
-<li>overflow: How visual overflow should be handled.</li>
-<li>maxLines: The maximum number of lines to display.</li>
-<li>textAlign: How the text should be aligned horizontally.</li>
-<li>locale: The locale to use for translation.</li>
-<li>selectionColor: The color of the selection handle.</li>
-<li>semanticsLabel: A description of the text used by accessibility tools.</li>
-<li>softWrap: Whether the text should break at soft line breaks.</li>
-<li>strutStyle: The strut style to apply to the text.</li>
-<li>textDirection: The direction in which the text should be laid out.</li>
-<li>textHeightBehavior: Defines how text height should be calculated.</li>
-<li>textScaleFactor: Deprecated parameter for scaling text size.</li>
-<li>textWidthBasis: How the width of the text should be calculated.</li>
-<li>textScaler: A custom text scaler to adjust text sizes.</li>
-<li>topMargin: The margin to apply at the top of the text widget.</li>
-<li>bottomMargin: The margin to apply at the bottom of the text widget.</li>
-<li>leftMargin: The margin to apply on the left side of the text widget.</li>
-<li>rightMargin: The margin to apply on the right side of the text widget.</li>
+<li><code>placeholder</code>: A fallback string to use if the original string is null.</li>
+<li><code>style</code>: The text style to apply to the text.</li>
+<li><code>overflow</code>: How visual overflow should be handled.</li>
+<li><code>maxLines</code>: The maximum number of lines to display.</li>
+<li><code>textAlign</code>: How the text should be aligned horizontally.</li>
+<li><code>locale</code>: The locale to use for translation.</li>
+<li><code>selectionColor</code>: The color of the selection handle.</li>
+<li><code>semanticsLabel</code>: A description of the text used by accessibility tools.</li>
+<li><code>softWrap</code>: Whether the text should break at soft line breaks.</li>
+<li><code>strutStyle</code>: The strut style to apply to the text.</li>
+<li><code>textDirection</code>: The direction in which the text should be laid out.</li>
+<li><code>textHeightBehavior</code>: Defines how text height should be calculated.</li>
+<li><code>textScaleFactor</code>: Deprecated parameter for scaling text size.</li>
+<li><code>textWidthBasis</code>: How the width of the text should be calculated.</li>
+<li><code>textScaler</code>: A custom text scaler to adjust text sizes.</li>
+<li><code>topMargin</code>: The margin to apply at the top of the text widget.</li>
+<li><code>bottomMargin</code>: The margin to apply at the bottom of the text widget.</li>
+<li><code>leftMargin</code>: The margin to apply on the left side of the text widget.</li>
+<li><code>rightMargin</code>: The margin to apply on the right side of the text widget.</li>
+<li><code>marginIfNull</code>: Whether to apply margin if the text is null.</li>
+<li><code>showPlaceholderIfEmpty</code>: Whether to show the placeholder if the text is empty.</li>
+<li><code>ipsumInDebug</code>: Whether to show 'ipsum' text in debug mode if the text is null.
+extension TranslatedX on String?</li>
 </ol>
 <blockquote>
 <p>Note: The textScaleFactor parameter is deprecated and should be avoided.</p>
@@ -126,7 +131,7 @@ class MyApp extends StatelessWidget {
 <h1 id="contributing">Contributing</h1>
 <p>Contributions are welcome! Please submit a pull request or open an issue on <a href="https://github.com/gktirkha/translated_x/">Github Repository.</a></p>
 <h1 id="license">License</h1>
-<p>This library is licensed under the MIT License. See the <a href="../LICENSE">LICENSE</a> file for details.</p>
+<p>This library is licensed under the MIT License. See the <a href="LICENSE">LICENSE</a> file for details.</p>
 </section>
 
 
@@ -137,8 +142,7 @@ class MyApp extends StatelessWidget {
   <span class="name"><a href="translated_x/translated_x-library.html">translated_x</a></span> 
 
 </dt>
-<dd>A Dart library for providing an extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> to create a <a href="https://api.flutter.dev/flutter/widgets/Text-class.html">Text</a> widget
-with translation and customizable margins.
+<dd>A library providing extensions for translated text widgets using GetX.
 </dd>
 
         </dl>

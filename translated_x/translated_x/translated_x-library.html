@@ -68,20 +68,42 @@
 
     
 <section class="desc markdown">
-  <p>A Dart library for providing an extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> to create a <a href="https://api.flutter.dev/flutter/widgets/Text-class.html">Text</a> widget
-with translation and customizable margins.</p>
-<p>This library exports the <code>translated_x.dart</code> file which contains the <code>TranslatedX</code>
-extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>, allowing for easy use of translated strings with customizable
-text properties and margins.</p>
-<p>Example:</p>
+  <p>A library providing extensions for translated text widgets using GetX.</p>
+<p>The <code>translated_x</code> library offers a convenient way to display translated text
+in Flutter applications. It includes an extension on <code>String?</code> that allows you
+to easily create text widgets with various customization options, leveraging
+the GetX package for translations.</p>
+<p>To use this library, simply import it and call the <code>translatedX</code> method on any
+nullable string. You can customize the appearance and behavior of the text
+widget through various parameters.</p>
 <pre class="language-dart"><code class="language-dart">import 'package:translated_x/translated_x.dart';
 
-'hello'.translatedX(
-  style: TextStyle(fontSize: 20),
+String? myText = 'hello';
+myText.translatedX(
+  style: TextStyle(fontSize: 16),
   textAlign: TextAlign.center,
-  topMargin: 10.0,
-  bottomMargin: 10.0,
+  topMargin: 8.0,
+  bottomMargin: 8.0,
 );
+</code></pre>
+<p>The library exports the following file:</p>
+<ul>
+<li><code>src/translated_x.dart</code>: Contains the extension method for <code>String?</code>.</li>
+</ul>
+<p>Example usage:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:translated_x/translated_x.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: 'hello'.translatedX(),
+        ),
+      ),
+    ),
+  );
+}
 </code></pre>
 </section>
 
@@ -96,13 +118,13 @@ text properties and margins.</p>
       <dl>
           <dt id="TranslatedX">
   <span class="name "><a href="../translated_x/TranslatedX.html">TranslatedX</a></span>
-  on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>
+  on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?
   
 
 </dt>
 <dd>
-  An extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> that provides a convenience method to create a <a href="https://api.flutter.dev/flutter/widgets/Text-class.html">Text</a>
-widget with translation and margin support.
+  An extension on <code>String?</code> that provides a widget displaying the translated
+text with various customization options.
 </dd>
 
 
