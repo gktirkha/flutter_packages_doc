@@ -131,6 +131,7 @@ Widget build(BuildContext context) {
         child: path.isURL
             ? path.endsWith(&#39;.svg&#39;)
                 ? SvgPicture.network(
+                    headers: headers,
                     width: squareDimension ?? width,
                     height: squareDimension ?? height,
                     path,
@@ -151,6 +152,7 @@ Widget build(BuildContext context) {
                             : ColorFilter.mode(color!, blendMode!),
                   )
                 : CachedNetworkImage(
+                    httpHeaders: headers,
                     repeat: repeat,
                     width: squareDimension ?? width,
                     height: squareDimension ?? height,
@@ -190,6 +192,8 @@ Widget build(BuildContext context) {
                     repeat: repeat,
                     color: color,
                     colorBlendMode: blendMode,
+                    errorBuilder: (context, error, stackTrace) =&gt;
+                        errorWidget ?? const SizedBox.shrink(),
                   ),
       );
     },

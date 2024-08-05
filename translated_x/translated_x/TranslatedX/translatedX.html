@@ -124,7 +124,9 @@
   final EdgeInsets margin =
       EdgeInsets.fromLTRB(leftMargin, topMargin, rightMargin, bottomMargin);
   String? textToShow = this ?? placeholder;
-  if (kDebugMode &amp;&amp; textToShow == null &amp;&amp; ipsumInDebug) textToShow = &#39;ipsum&#39;;
+  if (kDebugMode &amp;&amp;
+      (textToShow == null || textToShow.isEmpty) &amp;&amp;
+      ipsumInDebug) textToShow = &#39;ipsum&#39;;
 
   if ((textToShow == null || textToShow.isEmpty) &amp;&amp; !showPlaceholderIfEmpty) {
     return Container(
