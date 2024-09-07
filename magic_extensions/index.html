@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,84 +9,85 @@
   <title>magic_extensions - Dart API docs</title>
 
 
-  
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
+    rel="stylesheet">
+
   <link rel="stylesheet" href="static-assets/github.css?v1">
   <link rel="stylesheet" href="static-assets/styles.css?v1">
   <link rel="icon" href="static-assets/favicon.png?v1">
 
-  
 </head>
 
-
 <body data-base-href="" data-using-base-href="false" class="light-theme">
+  <div id="overlay-under-drawer"></div>
+  <header id="title">
+    <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+    <ol class="breadcrumbs gt-separated dark hidden-xs">
+      <li><a href="https://github.com/gktirkha/magic_extensions">magic_extensions package</a></li>
+    </ol>
+    <div class="self-name">magic_extensions</div>
+    <form class="search navbar-right" role="search">
+      <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead"
+        placeholder="Loading search...">
+    </form>
+    <div class="toggle" id="theme-button" title="Toggle brightness">
+      <label for="theme">
+        <input type="checkbox" id="theme" value="light-theme">
+        <span id="dark-theme-button" class="material-symbols-outlined">
+          dark_mode
+        </span>
+        <span id="light-theme-button" class="material-symbols-outlined">
+          light_mode
+        </span>
+      </label>
+    </div>
+  </header>
+  <main>
+    <div id="dartdoc-main-content" class="main-content">
 
-<div id="overlay-under-drawer"></div>
-
-<header id="title">
-  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
-  <ol class="breadcrumbs gt-separated dark hidden-xs">
-    <li><a href="https://github.com/gktirkha/magic_extensions">magic_extensions package</a></li>
-  </ol>
-  <div class="self-name">magic_extensions</div>
-  <form class="search navbar-right" role="search">
-    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
-  </form>
-  <div class="toggle" id="theme-button" title="Toggle brightness">
-    <label for="theme">
-      <input type="checkbox" id="theme" value="light-theme">
-      <span id="dark-theme-button" class="material-symbols-outlined">
-        dark_mode
-      </span>
-      <span id="light-theme-button" class="material-symbols-outlined">
-        light_mode
-      </span>
-    </label>
-  </div>
-</header>
-<main>
-
-  <div id="dartdoc-main-content" class="main-content">
-      
-<section class="desc markdown">
-  <h1 id="magic_extensions">magic_extensions</h1>
-<p><code>magic_extensions</code> is a Dart and Flutter package that provides a collection of extension methods for common Dart and Flutter types, enhancing their functionality and usability. This library simplifies common operations and adds convenience methods to core types.</p>
-<h2 id="features">Features</h2>
-<ol>
-<li>DateTime Extensions: Utility functions for formatting and comparing dates.</li>
-<li>Integer Extensions: Validation for status codes.</li>
-<li>String Extensions: Utilities for string manipulation and conversion.</li>
-<li>TimeOfDay Extensions: Methods for comparing and formatting time values.</li>
-<li>Status Colors: A centralized way to manage and use status-related colors.</li>
-</ol>
-<h2 id="installation">Installation</h2>
-<p>To use magic_extensions in your Flutter project, add the following dependency to your pubspec.yaml file:</p>
-<pre class="language-yaml"><code class="language-yaml">dependencies:
+      <section class="desc markdown">
+        <h1 id="magic_extensions">magic_extensions</h1>
+        <p><code>magic_extensions</code> is a Dart and Flutter package that provides a collection of extension methods
+          for common Dart and Flutter types, enhancing their functionality and usability. This library simplifies common
+          operations and adds convenience methods to core types.</p>
+        <h2 id="features">Features</h2>
+        <ol>
+          <li>DateTime Extensions: Utility functions for formatting and comparing dates.</li>
+          <li>Integer Extensions: Validation for status codes.</li>
+          <li>String Extensions: Utilities for string manipulation and conversion.</li>
+          <li>TimeOfDay Extensions: Methods for comparing and formatting time values.</li>
+          <li>Status Colors: A centralized way to manage and use status-related colors.</li>
+        </ol>
+        <h2 id="installation">Installation</h2>
+        <p>To use magic_extensions in your Flutter project, add the following dependency to your pubspec.yaml file:</p>
+        <pre class="language-yaml"><code class="language-yaml">dependencies:
   magic_extensions:
     git: https://github.com/gktirkha/magic_extensions
 </code></pre>
-<blockquote>
-<p>If you prefer, You may find the dart-doc version of the documentation <a href="https://gktirkha.github.io/flutter_packages_doc/magic_extensions">here</a></p>
-</blockquote>
-<h1 id="usage">Usage</h1>
-<h2 id="datetime-extensions">DateTime Extensions</h2>
-<pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
+        <blockquote>
+          <p>This Documentation Is Outdated and Does Not Contains Explanation Of All the methods and extensions please
+            refer to <a href="https://gktirkha.github.io/flutter_packages_doc/magic_extensions">Dart Doc Version</a></p>
+        </blockquote>
+        <h1 id="usage">Usage</h1>
+        <h2 id="datetime-extensions">DateTime Extensions</h2>
+        <pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
 
 DateTime? date = DateTime.now();
 String formattedDate = date.format(format: 'yyyy-MM-dd');
 bool isToday = date.isToday;
 </code></pre>
-<h2 id="integer-extensions">Integer Extensions</h2>
-<pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
+        <h2 id="integer-extensions">Integer Extensions</h2>
+        <pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
 
 int? statusCode = 200;
 bool isValid = statusCode.validateStatusCode(startStatusCode: 200, endStatusCode: 299);
 </code></pre>
-<h2 id="string-extensions">String Extensions</h2>
-<pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
+        <h2 id="string-extensions">String Extensions</h2>
+        <pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
 
 String? text = "Hello, World!";
 String withPrefix = text.withPrefix(prefix: 'Prefix: ');
@@ -93,15 +95,15 @@ String withSuffix = text.withSuffix(suffix: ' Suffix');
 DateTime? dateTime = text.toDateTime;
 String formattedTime = text.toTimeString(format: 'hh:mm a');
 </code></pre>
-<h2 id="timeofday-extensions">TimeOfDay Extensions</h2>
-<pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
+        <h2 id="timeofday-extensions">TimeOfDay Extensions</h2>
+        <pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
 
 TimeOfDay? time = TimeOfDay.now();
 bool isLater = time.isAfter(TimeOfDay(hour: 9, minute: 0));
 String formattedTime = time.format(format: 'hh:mm a');
 </code></pre>
-<h2 id="status-colors">Status Colors</h2>
-<pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
+        <h2 id="status-colors">Status Colors</h2>
+        <pre class="language-dart"><code class="language-dart">import 'package:magic_extensions/magic_extensions.dart';
 import 'package:flutter/material.dart';
 
 Map&lt;String, Color&gt; colorMap = {
@@ -112,114 +114,108 @@ Map&lt;String, Color&gt; colorMap = {
 
 Color color = 'success'.toMyStatusColor(colorMap);
 </code></pre>
-<h1 id="api">API</h1>
-<h2 id="magicdateextension">MagicDateExtension</h2>
-<ol>
-<li>String format({String format = 'dd MMM, yyyy', String placeholder = ''})</li>
-<li>bool get isToday</li>
-<li>bool isBeforeWithoutTime(DateTime? otherDate)</li>
-<li>bool isAfterWithoutTime(DateTime? otherDate)</li>
-</ol>
-<h1 id="magicintextension">MagicIntExtension</h1>
-<ol>
-<li>bool validateStatusCode({int startStatusCode = 200, int endStatusCode = 299})</li>
-<li>MagicNullString</li>
-<li>bool get isNotNullAndNotEmpty</li>
-<li>String get withComma</li>
-<li>String withPrefix({required String prefix, String placeholder = ''})</li>
-<li>String withSuffix({required String suffix, String placeholder = ''})</li>
-<li>DateTime? get toDateTime</li>
-<li>String withLineBreak()</li>
-<li>String replaceIfEmptyOrNull(String placeholder)</li>
-<li>Widget toText({...})</li>
-<li>String formatAsDate({String format = 'dd MMM, yyyy', String placeholder = ''})</li>
-</ol>
-<h1 id="magicstringextension">MagicStringExtension</h1>
-<ol>
-<li>String forceElapse({required int len, String suffix = "..."})</li>
-<li>String get extractInitials</li>
-<li>TimeOfDay? get toTime</li>
-<li>String toTimeString({String format = 'hh:mm a'})</li>
-<li>String get toHttps</li>
-<li>Color get toStatusColor</li>
-</ol>
-<h1 id="magicnumextension">MagicNumExtension</h1>
-<ol>
-<li>Widget width({Widget? child, Key? key})</li>
-<li>Widget height({Widget? child, Key? key})</li>
-<li>Widget square({Widget? child, Key? key})</li>
-</ol>
-<h1 id="magictimeextension">MagicTimeExtension</h1>
-<ol>
-<li>bool isAfter(TimeOfDay? toTime)</li>
-<li>bool isBefore(TimeOfDay? toTime)</li>
-<li>String format({String placeHolder = '', String format = 'hh:mm a'})</li>
-</ol>
-<h1 id="contributing">Contributing</h1>
-<p>Contributions are welcome! Please fork the repository and submit a pull request. For bug reports or feature requests, please open an issue on the <a href="https://github.com/gktirkha/magic_extensions">GitHub repository.</a></p>
-<h1 id="license">License</h1>
-<p>magic_extensions is licensed under the MIT License. See the <a href="../LICENSE">LICENSE</a> file for details.</p>
-</section>
+        <h1 id="api">API</h1>
+        <h2 id="magicdateextension">MagicDateExtension</h2>
+        <ol>
+          <li>String format({String format = 'dd MMM, yyyy', String placeholder = ''})</li>
+          <li>bool get isToday</li>
+          <li>bool isBeforeWithoutTime(DateTime? otherDate)</li>
+          <li>bool isAfterWithoutTime(DateTime? otherDate)</li>
+        </ol>
+        <h1 id="magicintextension">MagicIntExtension</h1>
+        <ol>
+          <li>bool validateStatusCode({int startStatusCode = 200, int endStatusCode = 299})</li>
+          <li>MagicNullString</li>
+          <li>bool get isNotNullAndNotEmpty</li>
+          <li>String get withComma</li>
+          <li>String withPrefix({required String prefix, String placeholder = ''})</li>
+          <li>String withSuffix({required String suffix, String placeholder = ''})</li>
+          <li>DateTime? get toDateTime</li>
+          <li>String withLineBreak()</li>
+          <li>String replaceIfEmptyOrNull(String placeholder)</li>
+          <li>Widget toText({...})</li>
+          <li>String formatAsDate({String format = 'dd MMM, yyyy', String placeholder = ''})</li>
+        </ol>
+        <h1 id="magicstringextension">MagicStringExtension</h1>
+        <ol>
+          <li>String forceElapse({required int len, String suffix = "..."})</li>
+          <li>String get extractInitials</li>
+          <li>TimeOfDay? get toTime</li>
+          <li>String toTimeString({String format = 'hh:mm a'})</li>
+          <li>String get toHttps</li>
+          <li>Color get toStatusColor</li>
+        </ol>
+        <h1 id="magicnumextension">MagicNumExtension</h1>
+        <ol>
+          <li>Widget width({Widget? child, Key? key})</li>
+          <li>Widget height({Widget? child, Key? key})</li>
+          <li>Widget square({Widget? child, Key? key})</li>
+        </ol>
+        <h1 id="magictimeextension">MagicTimeExtension</h1>
+        <ol>
+          <li>bool isAfter(TimeOfDay? toTime)</li>
+          <li>bool isBefore(TimeOfDay? toTime)</li>
+          <li>String format({String placeHolder = '', String format = 'hh:mm a'})</li>
+        </ol>
+        <h1 id="contributing">Contributing</h1>
+        <p>Contributions are welcome! Please fork the repository and submit a pull request. For bug reports or feature
+          requests, please open an issue on the <a href="https://github.com/gktirkha/magic_extensions">GitHub
+            repository.</a></p>
+        <h1 id="license">License</h1>
+        <p>magic_extensions is licensed under the MIT License. See the <a href="../LICENSE">LICENSE</a> file for
+          details.</p>
+      </section>
 
 
       <section class="summary">
-          <h2>Libraries</h2>
+        <h2>Libraries</h2>
         <dl>
           <dt id="magic_extensions">
-  <span class="name"><a href="magic_extensions/magic_extensions-library.html">magic_extensions</a></span> 
+            <span class="name"><a href="magic_extensions/magic_extensions-library.html">magic_extensions</a></span>
 
-</dt>
-<dd>A library that provides a collection of extension methods for common Dart and Flutter types.
-</dd>
+          </dt>
+          <dd>A library that provides a collection of extension methods for common Dart and Flutter types.
+          </dd>
 
         </dl>
       </section>
+    </div> <!-- /.main-content -->
+    <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+      <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+      <header id="header-search-sidebar" class="hidden-l">
+        <form class="search-sidebar" role="search">
+          <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead"
+            placeholder="Loading search...">
+        </form>
+      </header>
+      <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+        <li><a href="https://github.com/gktirkha/magic_extensions">magic_extensions package</a></li>
+      </ol>
 
-  </div> <!-- /.main-content -->
+      <h5 class="hidden-xs"><span class="package-name">magic_extensions</span> <span class="package-kind">package</span>
+      </h5>
+      <ol>
+        <li class="section-title">Libraries</li>
+        <li><a href="magic_extensions/magic_extensions-library.html">magic_extensions</a></li>
+      </ol>
 
-  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
-<header id="header-search-sidebar" class="hidden-l">
-  <form class="search-sidebar" role="search">
-    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
-  </form>
-</header>
-
-<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
-    <li><a href="https://github.com/gktirkha/magic_extensions">magic_extensions package</a></li>
-</ol>
-
-
-    <h5 class="hidden-xs"><span class="package-name">magic_extensions</span> <span class="package-kind">package</span></h5>
-    <ol>
-      <li class="section-title">Libraries</li>
-      <li><a href="magic_extensions/magic_extensions-library.html">magic_extensions</a></li>
-</ol>
-
-  </div>
-
-  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-  </div>
-
-</main>
-
-<footer>
-  <span class="no-break">
-    magic_extensions
+    </div>
+    <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    </div>
+  </main>
+  <footer>
+    <span class="no-break">
+      magic_extensions
       0.0.1
-  </span>
+    </span>
 
-  
-</footer>
-
-
-<script src="../dark_theme.js"></script>
-<script src="static-assets/highlight.pack.js?v1"></script>
-<script src="static-assets/docs.dart.js"></script>
+  </footer>
 
 
+  <script src="../dark_theme.js"></script>
+  <script src="static-assets/highlight.pack.js?v1"></script>
+  <script src="static-assets/docs.dart.js"></script>
 
 </body>
 
 </html>
-

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the toHttps property from the MagicStringExtension extension, for the Dart programming language.">
-  <title>toHttps property - MagicStringExtension extension - magic_extensions library - Dart API</title>
+  <meta name="description" content="API docs for the toHttps method from the MagicStringExtension extension, for the Dart programming language.">
+  <title>toHttps method - MagicStringExtension extension - magic_extensions library - Dart API</title>
 
 
   
@@ -16,22 +16,18 @@
   <link rel="stylesheet" href="../../static-assets/github.css?v1">
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
-
   
 </head>
 
-
 <body data-base-href="../../" data-using-base-href="false" class="light-theme">
-
 <div id="overlay-under-drawer"></div>
-
 <header id="title">
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions.dart</a></li>
     <li><a href="../../magic_extensions/MagicStringExtension.html">MagicStringExtension</a></li>
-    <li class="self-crumb">toHttps property</li>
+    <li class="self-crumb">toHttps method</li>
   </ol>
   <div class="self-name">toHttps</div>
   <form class="search navbar-right" role="search">
@@ -50,89 +46,87 @@
   </div>
 </header>
 <main>
-
 <div
     id="dartdoc-main-content"
     class="main-content"
     data-above-sidebar="magic_extensions&#47;MagicStringExtension-extension-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-property">toHttps</span> property 
+<h1><span class="kind-method">toHttps</span> method 
 </h1></div>
-
-
-        
-  <section id="getter">
 
     <section class="multi-line-signature">
       
-      <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
-      <span class="name ">toHttps</span>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+<span class="name ">toHttps</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="toHttps-param-ignoreInDebugMode"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">ignoreInDebugMode</span> = <span class="default-value">true</span>, </span></li>
+</ol>})
+
       
 
     </section>
-
     
 <section class="desc markdown">
-  <p>Converts an HTTP URL to HTTPS.</p>
-<p>If the <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> starts with 'http:', it is replaced with 'https:'. Otherwise, the <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> remains unchanged.</p>
+  <p>Converts a <code>String</code> URL from HTTP to HTTPS if it starts with 'http:'.</p>
+<p>If the URL starts with 'http:', it replaces 'http:' with 'https:'.
+If the URL already starts with 'https:' or does not start with 'http:', it returns the URL as-is.</p>
+<ul>
+<li>
+<p>If the app is in debug mode and <code>ignoreInDebugMode</code> is <code>true</code>, the method returns the original URL without modification.</p>
+</li>
+<li>
+<p><code>ignoreInDebugMode</code>: If <code>true</code>, the conversion to HTTPS is ignored when the app is in debug mode. Defaults to <code>true</code>.</p>
+</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <code>String</code> URL with 'http:' replaced by 'https:', or the original URL if no conversion is applied.</li>
+</ul>
 </section>
+
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">String get toHttps {
+  <pre class="language-dart"><code class="language-dart">String toHttps({bool ignoreInDebugMode = true}) {
+  if (kDebugMode &amp;&amp; ignoreInDebugMode) return this;
   return (startsWith(&#39;http:&#39;)) ? &#39;https${substring(4)}&#39; : this;
 }</code></pre>
 </section>
 
-  </section>
 
-
-</div> <!-- /.main-content -->
-
-<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
-
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/MagicStringExtension.html">MagicStringExtension</a></li>
-    <li class="self-crumb">toHttps property</li>
+    <li class="self-crumb">toHttps method</li>
 </ol>
 
-
-  <h5>MagicStringExtension extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></h5>
-  <div id="dartdoc-sidebar-left-content"></div>
+    <h5>MagicStringExtension extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
 </div><!--/.sidebar-offcanvas-->
-
-<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
-</div><!--/.sidebar-offcanvas-->
-
 </main>
-
 <footer>
   <span class="no-break">
     magic_extensions
       0.0.1
   </span>
-
   
 </footer>
-
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
 <script src="../../static-assets/docs.dart.js"></script>
 
-
-
 </body>
-
 </html>
 
