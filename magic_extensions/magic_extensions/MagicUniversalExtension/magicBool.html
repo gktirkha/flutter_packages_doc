@@ -87,8 +87,12 @@
 
   if (this is String) {
     final str = (this as String).toLowerCase().trim();
-    if (str == &#39;true&#39; || str == &#39;yes&#39; || str == &#39;1&#39;) return true;
-    if (str == &#39;false&#39; || str == &#39;no&#39; || str == &#39;0&#39;) return false;
+    if (str == &#39;true&#39; || str == &#39;yes&#39; || str == &#39;1&#39; || str == &#39;y&#39;) {
+      return true;
+    }
+    if (str == &#39;false&#39; || str == &#39;no&#39; || str == &#39;0&#39; || str == &#39;no&#39;) {
+      return false;
+    }
     return str.isNotEmpty;
   }
 

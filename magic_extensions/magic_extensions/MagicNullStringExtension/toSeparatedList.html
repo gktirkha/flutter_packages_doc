@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the magicString method from the MagicUniversalExtension extension, for the Dart programming language.">
-  <title>magicString method - MagicUniversalExtension extension - magic_extensions library - Dart API</title>
+  <meta name="description" content="API docs for the toSeparatedList method from the MagicNullStringExtension extension, for the Dart programming language.">
+  <title>toSeparatedList method - MagicNullStringExtension extension - magic_extensions library - Dart API</title>
 
 
   
@@ -26,10 +26,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions.dart</a></li>
-    <li><a href="../../magic_extensions/MagicUniversalExtension.html">MagicUniversalExtension<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
-    <li class="self-crumb">magicString method</li>
+    <li><a href="../../magic_extensions/MagicNullStringExtension.html">MagicNullStringExtension</a></li>
+    <li class="self-crumb">toSeparatedList method</li>
   </ol>
-  <div class="self-name">magicString</div>
+  <div class="self-name">toSeparatedList</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,17 +49,16 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="magic_extensions&#47;MagicUniversalExtension-extension-sidebar.html"
+    data-above-sidebar="magic_extensions&#47;MagicNullStringExtension-extension-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">magicString</span> method 
+<h1><span class="kind-method">toSeparatedList</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
-<span class="name ">magicString</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="magicString-param-defaultValue"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">defaultValue</span> = <span class="default-value">&#39;&#39;</span>, </span></li>
-<li><span class="parameter" id="magicString-param-nonEmptyInDebug"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">nonEmptyInDebug</span> = <span class="default-value">true</span>, </span></li>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>&gt;</span></span>
+<span class="name ">toSeparatedList</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="toSeparatedList-param-delimiter"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">delimiter</span> = <span class="default-value">&#39;,&#39;</span>, </span></li>
 </ol>})
 
       
@@ -67,47 +66,19 @@
     </section>
     
 <section class="desc markdown">
-  <p>Converts the value to a <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>.</p>
-<ul>
-<li><code>defaultValue</code>: The value to return if the conversion fails or the value is <code>null</code>.</li>
-<li><code>nonEmptyInDebug</code>: If <code>true</code>, returns 'Lorem Ipsum' when the <code>defaultValue</code> is empty and the app is in debug mode.</li>
-</ul>
+  <p>Converts the nullable <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> to a list of strings split by <code>delimiter</code> (Default ,).</p>
+<p>Returns an empty list if the <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> is null or empty.</p>
+<p>Uses the <a href="../../magic_extensions/MagicNullStringExtension/validString.html">validString</a> method to handle null or empty strings before splitting
+the resulting non-null string by commas.</p>
+<p>Returns a list of substrings obtained by splitting the <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> by commas.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">String magicString({String defaultValue = &#39;&#39;, bool nonEmptyInDebug = true}) {
-  if (isNull) {
-    return defaultValue.validString(
-      defaultValue: defaultValue,
-      nonEmptyInDebug: nonEmptyInDebug,
-    );
-  }
-  if (this is String) {
-    return (this as String).validString(
-      defaultValue: defaultValue,
-      nonEmptyInDebug: nonEmptyInDebug,
-    );
-  }
-  if (this is num) return toString();
-  if (this is bool) return (this as bool) ? &#39;true&#39; : &#39;false&#39;;
-  if (this is List) return (this as List).join(&#39;, &#39;);
-  if (this is Map) {
-    return (this as Map)
-        .entries
-        .map((e) =&gt; &#39;${e.key}: ${e.value}&#39;)
-        .join(&#39;, &#39;);
-  }
-  if (this is Set) return (this as Set).join(&#39;, &#39;);
-  if (this is Queue) return (this as Queue).join(&#39;, &#39;);
-  if (this is DateTime) return (this as DateTime).toIso8601String();
-  return defaultValue.validString(
-    defaultValue: defaultValue,
-    nonEmptyInDebug: nonEmptyInDebug,
-  );
-}</code></pre>
+  <pre class="language-dart"><code class="language-dart">List&lt;String&gt; toSeparatedList({String delimiter = &#39;,&#39;}) =&gt;
+    validString().split(delimiter);</code></pre>
 </section>
 
 
@@ -122,11 +93,11 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions</a></li>
-    <li><a href="../../magic_extensions/MagicUniversalExtension.html">MagicUniversalExtension<span class="signature">&lt;<wbr><span class="type-parameter">T</span>&gt;</span></a></li>
-    <li class="self-crumb">magicString method</li>
+    <li><a href="../../magic_extensions/MagicNullStringExtension.html">MagicNullStringExtension</a></li>
+    <li class="self-crumb">toSeparatedList method</li>
 </ol>
 
-    <h5>MagicUniversalExtension extension on T?</h5>
+    <h5>MagicNullStringExtension extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">

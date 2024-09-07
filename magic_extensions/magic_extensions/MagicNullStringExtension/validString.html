@@ -85,7 +85,9 @@
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">String validString({String defaultValue = &#39;&#39;, bool nonEmptyInDebug = true}) {
   if (this == null || this!.trim().isEmpty) {
-    return (nonEmptyInDebug &amp;&amp; kDebugMode) ? &#39;Lorem Ipsum&#39; : defaultValue;
+    return (nonEmptyInDebug &amp;&amp; kDebugMode)
+        ? &#39;Lorem Ipsum&#39;
+        : defaultValue.trim();
   }
   return this!.trim();
 }</code></pre>
