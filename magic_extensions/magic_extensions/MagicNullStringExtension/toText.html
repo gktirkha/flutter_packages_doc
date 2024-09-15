@@ -97,7 +97,7 @@
 <code>topMargin</code>, <code>bottomMargin</code>, <code>leftMargin</code>, <code>rightMargin</code> specify margins for the <a href="https://api.flutter.dev/flutter/widgets/Text-class.html">Text</a>.
 <code>marginIfNull</code> determines if margin should be applied if the <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> is null.
 <code>showPlaceholderIfEmpty</code> determines if the placeholder should be shown if the <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> is empty.
-<code>ipsumInDebug</code> determines if "ipsum" should be displayed in debug mode when the <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> is null.</p>
+<code>ipsumInDebug</code> determines if "Lorem Ipsum" should be displayed in debug mode when the <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> is null.</p>
 </section>
 
 
@@ -134,7 +134,7 @@
   String? textToShow = this ?? placeholder;
   if (kDebugMode &amp;&amp;
       (textToShow == null || textToShow.isEmpty) &amp;&amp;
-      ipsumInDebug) textToShow = &#39;ipsum&#39;;
+      ipsumInDebug) textToShow = &#39;Lorem Ipsum&#39;;
 
   if ((textToShow == null || textToShow.isEmpty) &amp;&amp; !showPlaceholderIfEmpty) {
     return Container(
