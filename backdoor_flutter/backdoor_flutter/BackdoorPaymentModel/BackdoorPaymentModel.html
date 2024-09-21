@@ -94,7 +94,9 @@ has been made (defaults to false).
   <pre class="language-dart"><code class="language-dart">const factory BackdoorPaymentModel({
   @JsonKey(name: &#39;status&#39;) PaymentStatus? status,
   @JsonKey(name: &#39;target_version&#39;) double? targetVersion,
-  @Default(false) @JsonKey(name: &#39;should_check_after_paid&#39;) bool shouldCheckAfterPaid,
+  @Default(false)
+  @JsonKey(name: &#39;should_check_after_paid&#39;)
+  bool shouldCheckAfterPaid,
   @Default(false) @JsonKey(name: &#39;check_during_trial&#39;) bool checkDuringTrial,
   @JsonKey(name: &#39;expire_date&#39;) DateTime? expireDateTime,
   @JsonKey(name: &#39;warning_date&#39;) DateTime? warningDate,
@@ -130,7 +132,7 @@ has been made (defaults to false).
 <footer>
   <span class="no-break">
     backdoor_flutter
-      0.1.0
+      0.1.6
   </span>
   
 </footer>

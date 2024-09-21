@@ -70,7 +70,11 @@ and the configured version, providing the payment model, the target version, and
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">typedef OnTargetVersionMisMatch = Function(BackdoorPaymentModel backdoorPaymentModel, double targetVersion, double configuredVersion);</code></pre>
+  <pre class="language-dart"><code class="language-dart">typedef OnTargetVersionMisMatch = Function(
+  BackdoorPaymentModel backdoorPaymentModel,
+  double targetVersion,
+  double configuredVersion,
+);</code></pre>
 </section>
 
   </div> <!-- /.main-content -->
@@ -96,7 +100,7 @@ and the configured version, providing the payment model, the target version, and
 <footer>
   <span class="no-break">
     backdoor_flutter
-      0.1.0
+      0.1.6
   </span>
   
 </footer>

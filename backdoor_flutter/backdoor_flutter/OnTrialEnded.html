@@ -70,7 +70,10 @@ providing the payment model and the trial expiry date.</p>
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">typedef OnTrialEnded = Function(BackdoorPaymentModel backdoorPaymentModel, DateTime expiryDate);</code></pre>
+  <pre class="language-dart"><code class="language-dart">typedef OnTrialEnded = Function(
+  BackdoorPaymentModel backdoorPaymentModel,
+  DateTime expiryDate,
+);</code></pre>
 </section>
 
   </div> <!-- /.main-content -->
@@ -96,7 +99,7 @@ providing the payment model and the trial expiry date.</p>
 <footer>
   <span class="no-break">
     backdoor_flutter
-      0.1.0
+      0.1.6
   </span>
   
 </footer>

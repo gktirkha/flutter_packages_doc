@@ -138,7 +138,8 @@ The function can be customized with HTTP headers, query parameters, request body
 }) async {
   try {
     final bool shouldCheckOnline = await _shouldCheckOnline();
-    BackdoorPaymentModel? storedModel = await StorageService.getPaymentModel();
+    BackdoorPaymentModel? storedModel =
+        await StorageService.getPaymentModel();
     final BackdoorPaymentModel? operationModel = shouldCheckOnline
         ? await _onlineModel(
             httpHeaders: httpHeaders ?? {},
@@ -175,7 +176,10 @@ The function can be customized with HTTP headers, query parameters, request body
       if (onTargetVersionMisMatch != null) {
         onTargetVersionMisMatch(operationModel, targetVersion, _version);
       } else {
-        onUnhandled(OnUnhandledReason.TARGET_VERSION_MISMATCH, operationModel);
+        onUnhandled(
+          OnUnhandledReason.TARGET_VERSION_MISMATCH,
+          operationModel,
+        );
       }
       return;
     }
@@ -195,8 +199,12 @@ The function can be customized with HTTP headers, query parameters, request body
       onTargetVersionMisMatch: onTargetVersionMisMatch,
     );
   } catch (e) {
-    final BackdoorPaymentModel? operationModel = await StorageService.getPaymentModel();
-    if (useCachedConfigOnNetworkException &amp;&amp; operationModel != null &amp;&amp; e is BackdoorFlutterException &amp;&amp; e.type == BackdoorFlutterExceptionType.NETWORK_EXCEPTION) {
+    final BackdoorPaymentModel? operationModel =
+        await StorageService.getPaymentModel();
+    if (useCachedConfigOnNetworkException &amp;&amp;
+        operationModel != null &amp;&amp;
+        e is BackdoorFlutterException &amp;&amp;
+        e.type == BackdoorFlutterExceptionType.NETWORK_EXCEPTION) {
       _handleExecution(
         onPaid: onPaid,
         onTrial: onTrial,
@@ -245,7 +253,7 @@ The function can be customized with HTTP headers, query parameters, request body
 <footer>
   <span class="no-break">
     backdoor_flutter
-      0.1.0
+      0.1.6
   </span>
   
 </footer>

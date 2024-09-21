@@ -70,7 +70,11 @@ providing the payment model, the trial expiry date, and the warning date.</p>
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">typedef OnTrialWarning = Function(BackdoorPaymentModel backdoorPaymentModel, DateTime expiryDate, DateTime warningDate);</code></pre>
+  <pre class="language-dart"><code class="language-dart">typedef OnTrialWarning = Function(
+  BackdoorPaymentModel backdoorPaymentModel,
+  DateTime expiryDate,
+  DateTime warningDate,
+);</code></pre>
 </section>
 
   </div> <!-- /.main-content -->
@@ -96,7 +100,7 @@ providing the payment model, the trial expiry date, and the warning date.</p>
 <footer>
   <span class="no-break">
     backdoor_flutter
-      0.1.0
+      0.1.6
   </span>
   
 </footer>

@@ -111,7 +111,8 @@ Corresponding environment variable: <code>BACKDOOR_AUTO_DECREMENT</code>.</li>
   _showApiLogs = showApiLogs;
   _jsonUrl = InitService.initializeUrl(jsonUrl);
   _appName = InitService.initializeAppName(appName);
-  _autoDecrementLaunchCount = InitService.initializeAutoDecrement(autoDecrementLaunchCount);
+  _autoDecrementLaunchCount =
+      InitService.initializeAutoDecrement(autoDecrementLaunchCount);
   _version = InitService.initializeVersion(version);
   await StorageService.init();
   await StorageService.setConfig(_version, _appName);
@@ -143,7 +144,7 @@ Corresponding environment variable: <code>BACKDOOR_AUTO_DECREMENT</code>.</li>
 <footer>
   <span class="no-break">
     backdoor_flutter
-      0.1.0
+      0.1.6
   </span>
   
 </footer>
