@@ -58,7 +58,12 @@
 
     
 <section class="desc markdown">
-  <p>A class responsible for managing application payment status and launch control.</p>
+  <p><a href="../backdoor_flutter/BackdoorFlutter-class.html">BackdoorFlutter</a> Class Provides provides method to check payment status and act accordingly</p>
+<p>it provides 2 methods</p>
+<ol>
+<li><a href="../backdoor_flutter/BackdoorFlutter/init.html">init</a> to initialize configuration</li>
+<li><a href="../backdoor_flutter/BackdoorFlutter/checkStatus.html">checkStatus</a> to check the status</li>
+</ol>
 </section>
 
 
@@ -163,99 +168,45 @@
     </dl>
   </section>
     
-  <section class="summary offset-anchor" id="static-properties">
-    <h2>Static Properties</h2>
-    <dl class="properties">
-        <dt id="appName" class="property">
-  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/appName.html">appName</a></span>
-  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
-  
-
-</dt>
-<dd>
-  The name of the application.
-  <div class="features"><span class="feature">getter/setter pair</span></div>
-
-</dd>
-
-        <dt id="autoDecrement" class="property">
-  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/autoDecrement.html">autoDecrement</a></span>
-  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-  
-
-</dt>
-<dd>
-  A flag to determine if the launch counter should be auto-decremented.
-  <div class="features"><span class="feature">getter/setter pair</span></div>
-
-</dd>
-
-        <dt id="jsonUrl" class="property">
-  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/jsonUrl.html">jsonUrl</a></span>
-  <span class="signature">&#8596; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
-  
-
-</dt>
-<dd>
-  The URL used to fetch the JSON configuration.
-  <div class="features"><span class="feature">getter/setter pair</span></div>
-
-</dd>
-
-    </dl>
-  </section>
     
   <section class="summary offset-anchor" id="static-methods">
     <h2>Static Methods</h2>
     <dl class="callables">
-        <dt id="checkAppStatus" class="callable">
-  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/checkAppStatus.html">checkAppStatus</a></span><span class="signature">(<wbr>{<span class="parameter" id="checkAppStatus-param-onPaid"><span class="type-annotation"><a href="../backdoor_flutter/OnPaid.html">OnPaid</a>?</span> <span class="parameter-name">onPaid</span>, </span><span class="parameter" id="checkAppStatus-param-onLimitedLaunches"><span class="type-annotation"><a href="../backdoor_flutter/OnLimitedLaunches.html">OnLimitedLaunches</a>?</span> <span class="parameter-name">onLimitedLaunches</span>, </span><span class="parameter" id="checkAppStatus-param-onUnpaid"><span class="type-annotation"><a href="../backdoor_flutter/OnUnpaid.html">OnUnpaid</a>?</span> <span class="parameter-name">onUnpaid</span>, </span><span class="parameter" id="checkAppStatus-param-onException"><span class="type-annotation"><a href="../backdoor_flutter/OnException.html">OnException</a>?</span> <span class="parameter-name">onException</span>, </span><span class="parameter" id="checkAppStatus-param-onLimitedLaunchesExceeded"><span class="type-annotation"><a href="../backdoor_flutter/OnLimitedLaunchesExceeded.html">OnLimitedLaunchesExceeded</a>?</span> <span class="parameter-name">onLimitedLaunchesExceeded</span>, </span><span class="parameter" id="checkAppStatus-param-onTrial"><span class="type-annotation"><a href="../backdoor_flutter/OnTrial.html">OnTrial</a>?</span> <span class="parameter-name">onTrial</span>, </span><span class="parameter" id="checkAppStatus-param-onTrialExpire"><span class="type-annotation"><a href="../backdoor_flutter/OnTrialExpire.html">OnTrialExpire</a>?</span> <span class="parameter-name">onTrialExpire</span>, </span><span class="parameter" id="checkAppStatus-param-httpHeaders"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">httpHeaders</span>, </span><span class="parameter" id="checkAppStatus-param-httpQueryParameters"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">httpQueryParameters</span>, </span><span class="parameter" id="checkAppStatus-param-httpRequestBody"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">httpRequestBody</span>, </span><span class="parameter" id="checkAppStatus-param-httpMethod"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">httpMethod</span> = <span class="default-value">&#39;GET&#39;</span>, </span><span class="parameter" id="checkAppStatus-param-onAppNotFoundInNJson"><span class="type-annotation"><a href="../backdoor_flutter/OnAppNotFoundInJson.html">OnAppNotFoundInJson</a>?</span> <span class="parameter-name">onAppNotFoundInNJson</span>, </span><span class="parameter" id="checkAppStatus-param-showAPILogs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showAPILogs</span> = <span class="default-value">kDebugMode</span></span>})
+        <dt id="checkStatus" class="callable">
+  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/checkStatus.html">checkStatus</a></span><span class="signature">(<wbr>{<span class="parameter" id="checkStatus-param-httpHeaders"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">httpHeaders</span>, </span><span class="parameter" id="checkStatus-param-httpQueryParameters"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">httpQueryParameters</span>, </span><span class="parameter" id="checkStatus-param-httpRequestBody"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">httpRequestBody</span>, </span><span class="parameter" id="checkStatus-param-httpMethod"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">httpMethod</span> = <span class="default-value">&#39;GET&#39;</span>, </span><span class="parameter" id="checkStatus-param-onException"><span>required</span> <span class="type-annotation"><a href="../backdoor_flutter/OnException.html">OnException</a></span> <span class="parameter-name">onException</span>, </span><span class="parameter" id="checkStatus-param-onUnhandled"><span>required</span> <span class="type-annotation"><a href="../backdoor_flutter/OnUnhandled.html">OnUnhandled</a></span> <span class="parameter-name">onUnhandled</span>, </span><span class="parameter" id="checkStatus-param-onAppNotFound"><span class="type-annotation"><a href="../backdoor_flutter/OnAppNotFound.html">OnAppNotFound</a>?</span> <span class="parameter-name">onAppNotFound</span>, </span><span class="parameter" id="checkStatus-param-onPaid"><span class="type-annotation"><a href="../backdoor_flutter/OnPaid.html">OnPaid</a>?</span> <span class="parameter-name">onPaid</span>, </span><span class="parameter" id="checkStatus-param-onUnPaid"><span class="type-annotation"><a href="../backdoor_flutter/OnUnPaid.html">OnUnPaid</a>?</span> <span class="parameter-name">onUnPaid</span>, </span><span class="parameter" id="checkStatus-param-onLimitedLaunch"><span class="type-annotation"><a href="../backdoor_flutter/OnLimitedLaunch.html">OnLimitedLaunch</a>?</span> <span class="parameter-name">onLimitedLaunch</span>, </span><span class="parameter" id="checkStatus-param-onLimitedLaunchExceeded"><span class="type-annotation"><a href="../backdoor_flutter/OnLimitedLaunchExceeded.html">OnLimitedLaunchExceeded</a>?</span> <span class="parameter-name">onLimitedLaunchExceeded</span>, </span><span class="parameter" id="checkStatus-param-onTrial"><span class="type-annotation"><a href="../backdoor_flutter/OnTrial.html">OnTrial</a>?</span> <span class="parameter-name">onTrial</span>, </span><span class="parameter" id="checkStatus-param-onTrialWarning"><span class="type-annotation"><a href="../backdoor_flutter/OnTrialWarning.html">OnTrialWarning</a>?</span> <span class="parameter-name">onTrialWarning</span>, </span><span class="parameter" id="checkStatus-param-onTrialEnded"><span class="type-annotation"><a href="../backdoor_flutter/OnTrialEnded.html">OnTrialEnded</a>?</span> <span class="parameter-name">onTrialEnded</span>, </span><span class="parameter" id="checkStatus-param-onTargetVersionMisMatch"><span class="type-annotation"><a href="../backdoor_flutter/OnTargetVersionMisMatch.html">OnTargetVersionMisMatch</a>?</span> <span class="parameter-name">onTargetVersionMisMatch</span>, </span><span class="parameter" id="checkStatus-param-useCachedConfigOnNetworkException"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">useCachedConfigOnNetworkException</span> = <span class="default-value">true</span></span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Checks the application status and triggers the appropriate callback based on the status.
+  Checks the status of the application by retrieving and validating payment model data.
   
 
 </dd>
 
-        <dt id="decrementLaunchCounter" class="callable">
-  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/decrementLaunchCounter.html">decrementLaunchCounter</a></span><span class="signature">(<wbr>)
+        <dt id="decrementCount" class="callable">
+  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/decrementCount.html">decrementCount</a></span><span class="signature">(<wbr>)
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Decrements the launch counter in shared preferences.
+  Decrements the launch count for the application.
   
 
 </dd>
 
-        <dt id="handelModel" class="callable">
-  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/handelModel.html">handelModel</a></span><span class="signature">(<wbr><span class="parameter" id="handelModel-param-operationModel"><span class="type-annotation"><a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a></span> <span class="parameter-name">operationModel</span>, </span><span class="parameter" id="handelModel-param-onPaid"><span class="type-annotation"><a href="../backdoor_flutter/OnPaid.html">OnPaid</a>?</span> <span class="parameter-name">onPaid</span>, </span><span class="parameter" id="handelModel-param-onLimitedLaunches"><span class="type-annotation"><a href="../backdoor_flutter/OnLimitedLaunches.html">OnLimitedLaunches</a>?</span> <span class="parameter-name">onLimitedLaunches</span>, </span><span class="parameter" id="handelModel-param-onUnpaid"><span class="type-annotation"><a href="../backdoor_flutter/OnUnpaid.html">OnUnpaid</a>?</span> <span class="parameter-name">onUnpaid</span>, </span><span class="parameter" id="handelModel-param-onException"><span class="type-annotation"><a href="../backdoor_flutter/OnException.html">OnException</a>?</span> <span class="parameter-name">onException</span>, </span><span class="parameter" id="handelModel-param-onLimitedLaunchesExceeded"><span class="type-annotation"><a href="../backdoor_flutter/OnLimitedLaunchesExceeded.html">OnLimitedLaunchesExceeded</a>?</span> <span class="parameter-name">onLimitedLaunchesExceeded</span>, </span><span class="parameter" id="handelModel-param-onTrial"><span class="type-annotation"><a href="../backdoor_flutter/OnTrial.html">OnTrial</a>?</span> <span class="parameter-name">onTrial</span>, </span><span class="parameter" id="handelModel-param-onTrialExpire"><span class="type-annotation"><a href="../backdoor_flutter/OnTrialExpire.html">OnTrialExpire</a>?</span> <span class="parameter-name">onTrialExpire</span></span>)
+        <dt id="init" class="callable">
+  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/init.html">init</a></span><span class="signature">(<wbr>{<span class="parameter" id="init-param-jsonUrl"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">jsonUrl</span>, </span><span class="parameter" id="init-param-appName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">appName</span>, </span><span class="parameter" id="init-param-version"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">version</span>, </span><span class="parameter" id="init-param-showApiLogs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showApiLogs</span> = <span class="default-value">true</span>, </span><span class="parameter" id="init-param-autoDecrementLaunchCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">autoDecrementLaunchCount</span> = <span class="default-value">true</span></span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
   </span>
   
 
 </dt>
 <dd>
-  Handles the BackdoorPaymentModel based on its status and triggers appropriate callbacks.
-  
-
-</dd>
-
-        <dt id="initialize" class="callable">
-  <span class="name"><a href="../backdoor_flutter/BackdoorFlutter/initialize.html">initialize</a></span><span class="signature">(<wbr>{<span class="parameter" id="initialize-param-jsonUrl"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">jsonUrl</span>, </span><span class="parameter" id="initialize-param-appName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">appName</span>, </span><span class="parameter" id="initialize-param-autoDecrementLaunchCounter"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">autoDecrementLaunchCounter</span></span>})
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Initializes the BackdoorFlutter configuration.
+  Initializes the application configuration.
   
 
 </dd>

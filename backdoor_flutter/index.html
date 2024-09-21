@@ -54,8 +54,8 @@
         <p>This package adds a backdoor which checks for payment status for freelancing or other projects</p>
         <h1 id="requirements">Requirements</h1>
         <p>A hosted json file in following <a
-            href="https://github.com/gktirkha/backdoor_flutter/blob/master/assets/example-hosted.json">format</a>, A
-          single json file can handle multiple projects</p>
+            href="https://raw.githubusercontent.com/gktirkha/backdoor_flutter/refs/heads/master/assets/example-hosted.json">format</a>,
+          A single json file can handle multiple projects</p>
         <h1 id="json-arguments">Json Arguments</h1>
         <ol>
           <li>
@@ -74,44 +74,38 @@
                 </ol>
               </li>
               <li>
-                <p><strong>expiryDate:</strong> it's an optional argument, if current datetime is greater than expiry
-                  date, unPaid methods will be executed</p>
-                <blockquote>
-                  <p>enter date in <code>yyyy-M-d</code> or <code>yyyy-M-d-h-m</code> format (24 hours format)</p>
-                </blockquote>
+                <p><strong>target_version</strong> to check Against backdoor version configured in code (should be
+                  greater than 0)</p>
               </li>
               <li>
-                <p><strong>message</strong> optional argument which can be used to sent message if payment is not done,
-                  you will receive it in call back</p>
+                <p><strong>should_check_after_paid</strong> to force check json online even after status is paid (once
+                  set to false, devices with cached data will not have any effect after setting to true)</p>
               </li>
               <li>
-                <p><strong>maxLaunch:</strong> number of launches after which app should check online for latest payment
-                  status, if not provided, app will always check the servers, although if date is expired app will
-                  always check server</p>
-                <blockquote>
-                  <p>if maxLaunch is negative, counter value will -100 * maxLaunch i.e. 100 if maxLaunch = -1</p>
-                </blockquote>
-                <blockquote>
-                  <p>it Should be in string format</p>
-                </blockquote>
+                <p><strong>check_during_trial</strong> to force check json online in trial period (once set to false,
+                  devices with cached data will not have any effect after setting to true)</p>
               </li>
               <li>
-                <p><strong>developerDetails:</strong> a map of &lt;String,dynamic&gt; type, which will be received if
-                  payment is not done</p>
+                <p><strong>expire_date</strong> expiry date for <strong>ON_TRIAL</strong> mechanism</p>
               </li>
               <li>
-                <p><strong>should_check_after_paid</strong> if we want to check / hit api even after status is paid</p>
+                <p><strong>warning_date</strong> to issue warning in <strong>ON_TRIAL</strong> mechanism</p>
               </li>
               <li>
-                <p><strong>max_launch</strong> no of times to allow launch <strong>ALLOW_LIMITED_LAUNCHES</strong>
-                  mechanism, if negative the value is multiplied by 100.</p>
+                <p><strong>max_launch</strong> number of launches after which online json should be checked in
+                  <strong>ALLOW_LIMITED_LAUNCHES</strong> Mechanism
+                </p>
               </li>
               <li>
-                <p><strong>expiry_date</strong> no of times to allow launch <strong>ON_TRIAL</strong> mechanism.</p>
+                <p><strong>strict_max_launch</strong> if set to false, (default true in flutter code) the launch count
+                  will reset in flutter code. if set to true, after launch exceeds OnLimitedLaunchExceeded will be
+                  called, else launch count will reset.</p>
               </li>
               <li>
-                <p><strong>strict_max_launch</strong> resets max launch counter if set to false and max launch limit
-                  exceeds.</p>
+                <p><strong>developer_details</strong> a json object (Map), optional</p>
+              </li>
+              <li>
+                <p><strong>additional_fields</strong> you can literally send any thing</p>
               </li>
             </ul>
           </li>
@@ -121,6 +115,12 @@
           <p>Please Refer To dart <a href="https://gktirkha.github.io/flutter_packages_doc/backdoor_flutter">Dart Doc
               Version</a></p>
         </blockquote>
+        <h1 id="flow-chart-for-whole-mechanism">Flow Chart For Whole Mechanism</h1>
+        <ol>
+          <li><a href="https://github.com/gktirkha/backdoor_flutter/blob/master/assets/flow.png">image file</a></li>
+          <li><a href="https://github.com/gktirkha/backdoor_flutter/blob/master/assets/flow.drawio">draw.io</a></li>
+        </ol>
+        <h2 id="instructions">Instructions</h2>
         <ol>
           <li>
             <p>add dependency</p>
@@ -138,12 +138,11 @@ import 'package:flutter/material.dart';
 void main() async {
 WidgetsFlutterBinding.ensureInitialized();
 
-await BackdoorFlutter.initialize(
-    appName:
-        "ALLOW_LIMITED_LAUNCHES_WITH_NEGATIVE_MAX_LAUNCH_STRICT_LAUNCH_FALSE",
-    autoDecrementLaunchCounter: true,
+await BackdoorFlutter.init(
     jsonUrl:
         "https://raw.githubusercontent.com/gktirkha/backdoor_flutter/beta/assets/example-hosted.json",
+    appName: "trial_expire",
+    version: 1,
 );
 runApp(const MainApp());
 }
@@ -158,36 +157,59 @@ Widget build(BuildContext context) {
         body: Center(
         child: ElevatedButton(
             onPressed: () {
-            BackdoorFlutter.checkAppStatus(
-                onException: (exception, paymentStatusModel) {
-                log(
-                    "Exception $exception",
-                );
+            BackdoorFlutter.checkStatus(
+                onException: (exception) {
+                    log(exception.toString(), name: "onException");
                 },
-                onLimitedLaunches: (paymentStatusModel, currentLaunchCount) {
-                    log("onLimitedLaunches, $currentLaunchCount");
+                onUnhandled: (reason, backdoorPaymentModel) {
+                    log(reason.name, name: "onUnhandled");
+                    log(backdoorPaymentModel.toString(), name: "onUnhandled");
                 },
-                onLimitedLaunchesExceeded: (paymentStatusModel) {
-                    log("onLimitedLaunchesExceeded");
+                onAppNotFound: () {
+                    log("onAppNotFound", name: "onAppNotFound");
                 },
-                onPaid: (paymentStatusModel) {
-                    log("onPaid");
+                onLimitedLaunch: (backdoorPaymentModel, currentCount) {
+                    log(currentCount.toString(), name: "onLimitedLaunch");
+                    log(backdoorPaymentModel.toString(), name: "onLimitedLaunch");
                 },
-                onTrial: (paymentStatusModel) {
-                    log("onTrial");
+                onLimitedLaunchExceeded: (backdoorPaymentModel) {
+                    log(backdoorPaymentModel.toString(),
+                    name: "onLimitedLaunchExceeded");
                 },
-                onTrialExpire: (paymentStatusModel) {
-                    log("onTrialExpire");
+                onPaid: (backdoorPaymentModel) {
+                    log(backdoorPaymentModel.toString(), name: "onPaid");
                 },
-                onUnpaid: (paymentStatusModel) {
-                    log("onUnpaid");
+                onTargetVersionMisMatch:
+                    (backdoorPaymentModel, targetVersion, configuredVersion) {
+                    log(backdoorPaymentModel.toString(),
+                    name: "onTargetVersionMisMatch");
+                    log(targetVersion.toString(),
+                    name: "onTargetVersionMisMatch Target Version");
+                    log(configuredVersion.toString(),
+                    name: "onTargetVersionMisMatch Configured Version");
                 },
-                onAppNotFoundInNJson: (apiResponse) {
-                    log("onAppNotFoundInNJson");
+                onTrial: (backdoorPaymentModel, expiryDate, warningDate) {
+                    log(backdoorPaymentModel.toString(), name: "onTrial");
+                    log(expiryDate.toString(), name: "onTrial expiryDate");
+                    log(warningDate.toString(), name: "onTrial warningDate");
+                },
+                onTrialEnded: (backdoorPaymentModel, expiryDate) {
+                    log(backdoorPaymentModel.toString(), name: "onTrialEnded");
+                    log(expiryDate.toString(), name: "onTrialEnded expiryDate");
+                },
+                onTrialWarning:
+                    (backdoorPaymentModel, expiryDate, warningDate) {
+                    log(backdoorPaymentModel.toString(), name: "onTrialWarning");
+                    log(expiryDate.toString(), name: "onTrialWarning expiryDate");
+                    log(warningDate.toString(),
+                    name: "onTrialWarning warningDate");
+                },
+                onUnPaid: (backdoorPaymentModel) {
+                    log(backdoorPaymentModel.toString(), name: "onUnPaid");
                 },
             );
             },
-            child: const Text("data"),
+            child: const Text("Check App"),
         ),
         ),
     ),
@@ -200,7 +222,8 @@ Widget build(BuildContext context) {
         </ol>
         <h1 id="license">License</h1>
         <p>This project is licensed under the MIT License. See the <a href="../LICENSE">LICENSE</a> file for more
-          details.</p>
+          details.
+        </p>
       </section>
 
 
@@ -211,7 +234,7 @@ Widget build(BuildContext context) {
             <span class="name"><a href="backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter</a></span>
 
           </dt>
-          <dd>The Backdoor Flutter library.
+          <dd>A Dart library for the Backdoor Flutter application.
           </dd>
 
         </dl>

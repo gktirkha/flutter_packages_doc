@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the OnLimitedLaunches typedef from the backdoor_flutter library, for the Dart programming language.">
-  <title>OnLimitedLaunches typedef - backdoor_flutter library - Dart API</title>
+  <meta name="description" content="API docs for the OnUnhandled typedef from the backdoor_flutter library, for the Dart programming language.">
+  <title>OnUnhandled typedef - backdoor_flutter library - Dart API</title>
 
 
   
@@ -26,9 +26,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">backdoor_flutter</a></li>
     <li><a href="../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter.dart</a></li>
-    <li class="self-crumb">OnLimitedLaunches typedef</li>
+    <li class="self-crumb">OnUnhandled typedef</li>
   </ol>
-  <div class="self-name">OnLimitedLaunches</div>
+  <div class="self-name">OnUnhandled</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -51,28 +51,26 @@
       data-above-sidebar="backdoor_flutter&#47;backdoor_flutter-library-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-typedef">OnLimitedLaunches</span> typedef 
+<h1><span class="kind-typedef">OnUnhandled</span> typedef 
  
 </h1></div>
     <section class="multi-line-signature">
-        <span class="name ">OnLimitedLaunches</span> =
-     <span class="returntype">dynamic Function<span class="signature">(<span class="parameter" id="param-paymentStatusModel"><span class="type-annotation"><a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a></span> <span class="parameter-name">paymentStatusModel</span>, </span><span class="parameter" id="param-currentLaunchCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">currentLaunchCount</span></span>)</span></span>
+        <span class="name ">OnUnhandled</span> =
+     <span class="returntype">dynamic Function<span class="signature">(<span class="parameter" id="param-reason"><span class="type-annotation"><a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span> <span class="parameter-name">reason</span>, </span><span class="parameter" id="param-backdoorPaymentModel"><span class="type-annotation"><a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a>?</span> <span class="parameter-name">backdoorPaymentModel</span></span>)</span></span>
 
     </section>
 
     
 <section class="desc markdown">
-  <p>A callback function that is triggered when the app allows limited launches.</p>
-<p><code>paymentStatusModel</code> - The <a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a> containing details about the payment status.</p>
+  <p>Callback type for handling unhandled cases.</p>
+<p>This function is invoked when an unexpected situation occurs,
+providing the reason for the unhandled case and the associated payment model.</p>
 </section>
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">typedef OnLimitedLaunches = Function(
-  BackdoorPaymentModel paymentStatusModel,
-  int? currentLaunchCount,
-);</code></pre>
+  <pre class="language-dart"><code class="language-dart">typedef OnUnhandled = Function(OnUnhandledReason reason, BackdoorPaymentModel? backdoorPaymentModel);</code></pre>
 </section>
 
   </div> <!-- /.main-content -->
@@ -86,7 +84,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">backdoor_flutter</a></li>
     <li><a href="../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter</a></li>
-    <li class="self-crumb">OnLimitedLaunches typedef</li>
+    <li class="self-crumb">OnUnhandled typedef</li>
 </ol>
 
     <h5>backdoor_flutter library</h5>

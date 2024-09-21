@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the OnLimitedLaunchesExceeded typedef from the backdoor_flutter library, for the Dart programming language.">
-  <title>OnLimitedLaunchesExceeded typedef - backdoor_flutter library - Dart API</title>
+  <meta name="description" content="API docs for the OnUnPaid typedef from the backdoor_flutter library, for the Dart programming language.">
+  <title>OnUnPaid typedef - backdoor_flutter library - Dart API</title>
 
 
   
@@ -26,9 +26,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">backdoor_flutter</a></li>
     <li><a href="../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter.dart</a></li>
-    <li class="self-crumb">OnLimitedLaunchesExceeded typedef</li>
+    <li class="self-crumb">OnUnPaid typedef</li>
   </ol>
-  <div class="self-name">OnLimitedLaunchesExceeded</div>
+  <div class="self-name">OnUnPaid</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -51,27 +51,26 @@
       data-above-sidebar="backdoor_flutter&#47;backdoor_flutter-library-sidebar.html"
       data-below-sidebar="">
       <div>
-<h1><span class="kind-typedef">OnLimitedLaunchesExceeded</span> typedef 
+<h1><span class="kind-typedef">OnUnPaid</span> typedef 
  
 </h1></div>
     <section class="multi-line-signature">
-        <span class="name ">OnLimitedLaunchesExceeded</span> =
-     <span class="returntype">dynamic Function<span class="signature">(<span class="parameter" id="param-paymentStatusModel"><span class="type-annotation"><a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a></span> <span class="parameter-name">paymentStatusModel</span></span>)</span></span>
+        <span class="name ">OnUnPaid</span> =
+     <span class="returntype">dynamic Function<span class="signature">(<span class="parameter" id="param-backdoorPaymentModel"><span class="type-annotation"><a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a></span> <span class="parameter-name">backdoorPaymentModel</span></span>)</span></span>
 
     </section>
 
     
 <section class="desc markdown">
-  <p>A callback function that is triggered when the limited launches are exceeded.</p>
-<p><code>paymentStatusModel</code> - The <a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a> containing details about the payment status.</p>
+  <p>Callback type for handling unpaid application status.</p>
+<p>This function is invoked when the application is in an unpaid state,
+providing the relevant payment model.</p>
 </section>
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">typedef OnLimitedLaunchesExceeded = Function(
-  BackdoorPaymentModel paymentStatusModel,
-);</code></pre>
+  <pre class="language-dart"><code class="language-dart">typedef OnUnPaid = Function(BackdoorPaymentModel backdoorPaymentModel);</code></pre>
 </section>
 
   </div> <!-- /.main-content -->
@@ -85,7 +84,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">backdoor_flutter</a></li>
     <li><a href="../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter</a></li>
-    <li class="self-crumb">OnLimitedLaunchesExceeded typedef</li>
+    <li class="self-crumb">OnUnPaid typedef</li>
 </ol>
 
     <h5>backdoor_flutter library</h5>

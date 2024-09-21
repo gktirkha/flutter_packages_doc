@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the initialize method from the BackdoorFlutter class, for the Dart programming language.">
-  <title>initialize method - BackdoorFlutter class - backdoor_flutter library - Dart API</title>
+  <meta name="description" content="API docs for the init method from the BackdoorFlutter class, for the Dart programming language.">
+  <title>init method - BackdoorFlutter class - backdoor_flutter library - Dart API</title>
 
 
   
@@ -27,9 +27,9 @@
     <li><a href="../../index.html">backdoor_flutter</a></li>
     <li><a href="../../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter.dart</a></li>
     <li><a href="../../backdoor_flutter/BackdoorFlutter-class.html">BackdoorFlutter</a></li>
-    <li class="self-crumb">initialize static method</li>
+    <li class="self-crumb">init static method</li>
   </ol>
-  <div class="self-name">initialize</div>
+  <div class="self-name">init</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -52,15 +52,17 @@
     data-above-sidebar="backdoor_flutter&#47;BackdoorFlutter-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">initialize</span> static method 
+<h1><span class="kind-method">init</span> static method 
 </h1></div>
 
     <section class="multi-line-signature">
       
 <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">initialize</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="initialize-param-jsonUrl"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">jsonUrl</span>, </span></li>
-<li><span class="parameter" id="initialize-param-appName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">appName</span>, </span></li>
-<li><span class="parameter" id="initialize-param-autoDecrementLaunchCounter"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a>?</span> <span class="parameter-name">autoDecrementLaunchCounter</span>, </span></li>
+<span class="name ">init</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="init-param-jsonUrl"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">jsonUrl</span>, </span></li>
+<li><span class="parameter" id="init-param-appName"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">appName</span>, </span></li>
+<li><span class="parameter" id="init-param-version"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">version</span>, </span></li>
+<li><span class="parameter" id="init-param-showApiLogs"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">showApiLogs</span> = <span class="default-value">true</span>, </span></li>
+<li><span class="parameter" id="init-param-autoDecrementLaunchCount"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">autoDecrementLaunchCount</span> = <span class="default-value">true</span>, </span></li>
 </ol>})
 
       
@@ -68,26 +70,51 @@
     </section>
     
 <section class="desc markdown">
-  <p>Initializes the BackdoorFlutter configuration.</p>
-<p><code>jsonUrl</code> The URL where the JSON configuration can be found.
-<code>appName</code> The name of the application.
-<code>autoDecrementLaunchCounter</code> A flag indicating if the launch counter should be auto-decremented.</p>
+  <p>Initializes the application configuration.</p>
+<p>This method sets up the necessary parameters for the application using either
+provided arguments or environment variables. All parameters must be supplied either
+directly in this method or through their respective environment variables.</p>
+<p>Parameters:</p>
+<ul>
+<li><code>jsonUrl</code> : The URL where the JSON configuration file is hosted.
+Corresponding environment variable: <code>BACKDOOR_JSON_URL</code>.</li>
+<li><code>appName</code> : The name of the app to be looked up in the JSON file.
+Corresponding environment variable: <code>BACKDOOR_APP_NAME</code>.</li>
+<li><code>version</code> : The version of the backdoor rules, which must be greater than 0.
+Corresponding environment variable: <code>BACKDOOR_VERSION</code>.</li>
+<li><code>autoDecrementLaunchCount</code> : If set to <code>true</code>, the launch count will be automatically managed.
+If <code>false</code>, you must manually decrement the launch count using the <a href="../../backdoor_flutter/BackdoorFlutter/decrementCount.html">decrementCount</a> method.
+Corresponding environment variable: <code>BACKDOOR_AUTO_DECREMENT</code>.</li>
+</ul>
+<p>Throws:</p>
+<ul>
+<li>An exception if any required parameters are missing or invalid.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a> that completes when the configuration has been successfully initialized.
+<code>showApiLogs</code> to show api logs, default true</li>
+</ul>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">static Future&lt;void&gt; initialize({
+  <pre class="language-dart"><code class="language-dart">static Future&lt;void&gt; init({
   String? jsonUrl,
   String? appName,
-  bool? autoDecrementLaunchCounter,
+  double? version,
+  bool showApiLogs = true,
+  bool autoDecrementLaunchCount = true,
 }) async {
-  BackdoorFlutter.jsonUrl = InitService.initializeUrl(jsonUrl);
-  BackdoorFlutter.appName = InitService.initializeAppName(appName);
-  BackdoorFlutter.autoDecrement = InitService.initializeAutoDecrement(autoDecrementLaunchCounter);
-
-  await SharePreferenceService.init();
+  _showApiLogs = showApiLogs;
+  _jsonUrl = InitService.initializeUrl(jsonUrl);
+  _appName = InitService.initializeAppName(appName);
+  _autoDecrementLaunchCount = InitService.initializeAutoDecrement(autoDecrementLaunchCount);
+  _version = InitService.initializeVersion(version);
+  await StorageService.init();
+  await StorageService.setConfig(_version, _appName);
 }</code></pre>
 </section>
 
@@ -104,7 +131,7 @@
     <li><a href="../../index.html">backdoor_flutter</a></li>
     <li><a href="../../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter</a></li>
     <li><a href="../../backdoor_flutter/BackdoorFlutter-class.html">BackdoorFlutter</a></li>
-    <li class="self-crumb">initialize static method</li>
+    <li class="self-crumb">init static method</li>
 </ol>
 
     <h5>BackdoorFlutter class</h5>

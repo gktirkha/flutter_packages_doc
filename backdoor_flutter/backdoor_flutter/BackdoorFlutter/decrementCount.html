@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the message property from the BackdoorPaymentModel class, for the Dart programming language.">
-  <title>message property - BackdoorPaymentModel class - backdoor_flutter library - Dart API</title>
+  <meta name="description" content="API docs for the decrementCount method from the BackdoorFlutter class, for the Dart programming language.">
+  <title>decrementCount method - BackdoorFlutter class - backdoor_flutter library - Dart API</title>
 
 
   
@@ -26,10 +26,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">backdoor_flutter</a></li>
     <li><a href="../../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter.dart</a></li>
-    <li><a href="../../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a></li>
-    <li class="self-crumb">message property</li>
+    <li><a href="../../backdoor_flutter/BackdoorFlutter-class.html">BackdoorFlutter</a></li>
+    <li class="self-crumb">decrementCount static method</li>
   </ol>
-  <div class="self-name">message</div>
+  <div class="self-name">decrementCount</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,45 +49,42 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="backdoor_flutter&#47;BackdoorPaymentModel-class-sidebar.html"
+    data-above-sidebar="backdoor_flutter&#47;BackdoorFlutter-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-property">message</span> property 
+<h1><span class="kind-method">decrementCount</span> static method 
 </h1></div>
 
-    
-
-    
-        
-  <section id="getter">
     <section class="multi-line-signature">
       
-  <div>
-    <ol class="annotation-list">
-        <li>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;message&#39;)</li>
-    </ol>
-  </div>
-      <span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>
-      get
-      <span class="name ">message</span>
-      <div class="features"><span class="feature">inherited</span></div>
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
+<span class="name ">decrementCount</span>(<wbr>)
+
+      
 
     </section>
     
+<section class="desc markdown">
+  <p>Decrements the launch count for the application.</p>
+<p>This method reduces the recorded launch count by one. It can be used to manually
+adjust the count, particularly when <code>autoDecrementLaunchCount</code> is set to <code>false</code>.</p>
+<p>Returns:</p>
+<ul>
+<li>A <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a> that completes when the launch count has been successfully decremented.</li>
+</ul>
+</section>
+
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">@JsonKey(name: &#39;message&#39;)
-String? get message =&gt; throw _privateConstructorUsedError;</code></pre>
+  <pre class="language-dart"><code class="language-dart">static Future&lt;void&gt; decrementCount() =&gt; StorageService.decrementCount();</code></pre>
 </section>
 
-  </section>
 
-
-</div> <!-- /.main-content -->
-<div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
-  <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
   <form class="search-sidebar" role="search">
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
@@ -96,14 +93,14 @@ String? get message =&gt; throw _privateConstructorUsedError;</code></pre>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">backdoor_flutter</a></li>
     <li><a href="../../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter</a></li>
-    <li><a href="../../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a></li>
-    <li class="self-crumb">message property</li>
+    <li><a href="../../backdoor_flutter/BackdoorFlutter-class.html">BackdoorFlutter</a></li>
+    <li class="self-crumb">decrementCount static method</li>
 </ol>
 
-  <h5>BackdoorPaymentModel class</h5>
-  <div id="dartdoc-sidebar-left-content"></div>
-</div><!--/.sidebar-offcanvas-->
-<div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+    <h5>BackdoorFlutter class</h5>
+    <div id="dartdoc-sidebar-left-content"></div>
+  </div><!--/.sidebar-offcanvas-->
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
 </div><!--/.sidebar-offcanvas-->
 </main>
 <footer>

@@ -57,9 +57,9 @@
 
     
 <section class="desc markdown">
-  <p>A model representing the API response containing payment status information for various apps.</p>
-<p>This class is used to deserialize the JSON response from the backend, which includes
-a mapping of app names to their respective <a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a> objects.</p>
+  <p>Represents the API response model for backdoor payment status.</p>
+<p>This model encapsulates the data structure returned by the payment status API,
+including a map of application payment models.</p>
 </section>
 
 
@@ -92,7 +92,7 @@ a mapping of app names to their respective <a href="../backdoor_flutter/Backdoor
           <span class="name"><a href="../backdoor_flutter/BackdoorPaymentApiResponseModel/BackdoorPaymentApiResponseModel.html">BackdoorPaymentApiResponseModel</a></span><span class="signature">({<span class="parameter" id="-param-apps"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;apps&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter"><a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a></span>&gt;</span>?</span> <span class="parameter-name">apps</span></span>})</span>
         </dt>
         <dd>
-          Creates a new instance of <a href="../backdoor_flutter/BackdoorPaymentApiResponseModel-class.html">BackdoorPaymentApiResponseModel</a>.
+          Creates an instance of <a href="../backdoor_flutter/BackdoorPaymentApiResponseModel-class.html">BackdoorPaymentApiResponseModel</a>.
             <div class="constructor-modifier features">const</div>
             <div class="constructor-modifier features">factory</div>
         </dd>
@@ -100,7 +100,7 @@ a mapping of app names to their respective <a href="../backdoor_flutter/Backdoor
           <span class="name"><a href="../backdoor_flutter/BackdoorPaymentApiResponseModel/BackdoorPaymentApiResponseModel.fromJson.html">BackdoorPaymentApiResponseModel.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
         </dt>
         <dd>
-          Creates an instance of <a href="../backdoor_flutter/BackdoorPaymentApiResponseModel-class.html">BackdoorPaymentApiResponseModel</a> from JSON.
+          Creates a <a href="../backdoor_flutter/BackdoorPaymentApiResponseModel-class.html">BackdoorPaymentApiResponseModel</a> from a JSON map.
             <div class="constructor-modifier features">factory</div>
         </dd>
     </dl>

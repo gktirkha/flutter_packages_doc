@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the PaymentStatusEnum enum from the backdoor_flutter library, for the Dart programming language.">
-  <title>PaymentStatusEnum enum - backdoor_flutter library - Dart API</title>
+  <meta name="description" content="API docs for the OnUnhandledReason enum from the backdoor_flutter library, for the Dart programming language.">
+  <title>OnUnhandledReason enum - backdoor_flutter library - Dart API</title>
 
 
   
@@ -26,9 +26,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">backdoor_flutter</a></li>
     <li><a href="../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter.dart</a></li>
-    <li class="self-crumb">PaymentStatusEnum enum</li>
+    <li class="self-crumb">OnUnhandledReason enum</li>
   </ol>
-  <div class="self-name">PaymentStatusEnum</div>
+  <div class="self-name">OnUnhandledReason</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,11 +49,11 @@
     id="dartdoc-main-content"
     class="main-content"
     data-above-sidebar="backdoor_flutter&#47;backdoor_flutter-library-sidebar.html"
-    data-below-sidebar="backdoor_flutter&#47;PaymentStatusEnum-enum-sidebar.html">
+    data-below-sidebar="backdoor_flutter&#47;OnUnhandledReason-enum-sidebar.html">
     <div>
 
       <h1>
-        <span class="kind-enum">PaymentStatusEnum</span>
+        <span class="kind-enum">OnUnhandledReason</span>
         enum 
  
 
@@ -62,7 +62,7 @@
 
     
 <section class="desc markdown">
-  <p>Enum representing the various payment statuses for an app.</p>
+  <p>Enumeration representing various reasons for unhandled cases. when OnUnhandled is invoked</p>
 </section>
 
 
@@ -74,7 +74,7 @@
     <ul class="gt-separated dark eNum-relationships">
       <li><a href="https://api.flutter.dev/flutter/dart-core/Object-class.html">Object</a></li>
         <li><a href="https://api.flutter.dev/flutter/dart-core/Enum-class.html">Enum</a></li>
-      <li>PaymentStatusEnum</li>
+      <li>OnUnhandledReason</li>
     </ul>
   </dd>
 
@@ -96,48 +96,120 @@
         <dl class="properties">
             <dt id="PAID" class="constant">
     <span class="name ">PAID</span>
-  <span class="signature">&#8594; const <a href="../backdoor_flutter/PaymentStatusEnum.html">PaymentStatusEnum</a></span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
   
 
 </dt>
 <dd>
-  <p>The app has been paid for.</p>
+  <p>Indicates that the application is in a paid state.</p>
   
 
 </dd>
 
             <dt id="UNPAID" class="constant">
     <span class="name ">UNPAID</span>
-  <span class="signature">&#8594; const <a href="../backdoor_flutter/PaymentStatusEnum.html">PaymentStatusEnum</a></span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
   
 
 </dt>
 <dd>
-  <p>The app has not been paid for.</p>
+  <p>Indicates that the application is in an unpaid state.</p>
   
 
 </dd>
 
-            <dt id="ALLOW_LIMITED_LAUNCHES" class="constant">
-    <span class="name ">ALLOW_LIMITED_LAUNCHES</span>
-  <span class="signature">&#8594; const <a href="../backdoor_flutter/PaymentStatusEnum.html">PaymentStatusEnum</a></span>
+            <dt id="APP_NOT_FOUND_IN_JSON" class="constant">
+    <span class="name ">APP_NOT_FOUND_IN_JSON</span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
   
 
 </dt>
 <dd>
-  <p>The app allows limited launches before requiring further action.</p>
+  <p>Indicates that the application was not found in the JSON configuration.</p>
   
 
 </dd>
 
-            <dt id="ON_TRIAL" class="constant">
-    <span class="name ">ON_TRIAL</span>
-  <span class="signature">&#8594; const <a href="../backdoor_flutter/PaymentStatusEnum.html">PaymentStatusEnum</a></span>
+            <dt id="LIMITED_LAUNCH" class="constant">
+    <span class="name ">LIMITED_LAUNCH</span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
   
 
 </dt>
 <dd>
-  <p>The app is currently in a trial period.</p>
+  <p>Indicates that the application is in a limited launch state.</p>
+  
+
+</dd>
+
+            <dt id="LIMITED_LAUNCH_EXCEEDED" class="constant">
+    <span class="name ">LIMITED_LAUNCH_EXCEEDED</span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
+  
+
+</dt>
+<dd>
+  <p>Indicates that the application has exceeded its allowed launch count.</p>
+  
+
+</dd>
+
+            <dt id="TRIAL_WARNING" class="constant">
+    <span class="name ">TRIAL_WARNING</span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
+  
+
+</dt>
+<dd>
+  <p>Indicates a warning for the impending end of a trial period.</p>
+  
+
+</dd>
+
+            <dt id="TRIAL_ENDED" class="constant">
+    <span class="name ">TRIAL_ENDED</span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
+  
+
+</dt>
+<dd>
+  <p>Indicates that the trial period has ended.</p>
+  
+
+</dd>
+
+            <dt id="TRIAL" class="constant">
+    <span class="name ">TRIAL</span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
+  
+
+</dt>
+<dd>
+  <p>Indicates that the application is currently in a trial state.</p>
+  
+
+</dd>
+
+            <dt id="EXCEPTION" class="constant">
+    <span class="name ">EXCEPTION</span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
+  
+
+</dt>
+<dd>
+  <p>Indicates that an exception occurred during operation.</p>
+  
+
+</dd>
+
+            <dt id="TARGET_VERSION_MISMATCH" class="constant">
+    <span class="name ">TARGET_VERSION_MISMATCH</span>
+  <span class="signature">&#8594; const <a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>
+  
+
+</dt>
+<dd>
+  <p>Indicates a mismatch between the target version and the configured version.</p>
   
 
 </dd>
@@ -252,8 +324,8 @@
     <h2>Constants</h2>
     <dl class="properties">
         <dt id="values" class="constant">
-    <span class="name "><a href="../backdoor_flutter/PaymentStatusEnum/values-constant.html">values</a></span>
-  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../backdoor_flutter/PaymentStatusEnum.html">PaymentStatusEnum</a></span>&gt;</span></span>
+    <span class="name "><a href="../backdoor_flutter/OnUnhandledReason/values-constant.html">values</a></span>
+  <span class="signature">&#8594; const <a href="https://api.flutter.dev/flutter/dart-core/List-class.html">List</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="../backdoor_flutter/OnUnhandledReason.html">OnUnhandledReason</a></span>&gt;</span></span>
   
 
 </dt>
@@ -276,7 +348,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">backdoor_flutter</a></li>
     <li><a href="../backdoor_flutter/backdoor_flutter-library.html">backdoor_flutter</a></li>
-    <li class="self-crumb">PaymentStatusEnum enum</li>
+    <li class="self-crumb">OnUnhandledReason enum</li>
 </ol>
 
   <h5>backdoor_flutter library</h5>

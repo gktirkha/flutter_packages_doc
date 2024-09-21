@@ -57,7 +57,9 @@
 
     
 <section class="desc markdown">
-  <p>Exception class for handling errors specific to the BackdoorFlutter functionality.</p>
+  <p>Custom exception class for handling errors in the Backdoor application.</p>
+<p>This class encapsulates details about an error, including a message, type,
+optional API response, stack trace, and operation configuration.</p>
 </section>
 
 
@@ -87,10 +89,10 @@
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="BackdoorFlutterException" class="callable">
-          <span class="name"><a href="../backdoor_flutter/BackdoorFlutterException/BackdoorFlutterException.html">BackdoorFlutterException</a></span><span class="signature">({<span class="parameter" id="-param-message"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">message</span></span>})</span>
+          <span class="name"><a href="../backdoor_flutter/BackdoorFlutterException/BackdoorFlutterException.html">BackdoorFlutterException</a></span><span class="signature">({<span class="parameter" id="-param-message"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">message</span>, </span><span class="parameter" id="-param-type"><span>required</span> <span class="type-annotation"><a href="../backdoor_flutter/BackdoorFlutterExceptionType.html">BackdoorFlutterExceptionType</a></span> <span class="parameter-name">type</span>, </span><span class="parameter" id="-param-apiResponse"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">apiResponse</span>, </span><span class="parameter" id="-param-stackTrace"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/StackTrace-class.html">StackTrace</a>?</span> <span class="parameter-name">stackTrace</span>, </span><span class="parameter" id="-param-operationConfiguration"><span class="type-annotation"><a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a>?</span> <span class="parameter-name">operationConfiguration</span></span>})</span>
         </dt>
         <dd>
-          Creates a new instance of <a href="../backdoor_flutter/BackdoorFlutterException-class.html">BackdoorFlutterException</a>.
+          Creates an instance of <a href="../backdoor_flutter/BackdoorFlutterException-class.html">BackdoorFlutterException</a>.
         </dd>
     </dl>
   </section>
@@ -100,6 +102,18 @@
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="apiResponse" class="property">
+  <span class="name"><a href="../backdoor_flutter/BackdoorFlutterException/apiResponse.html">apiResponse</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>
+  
+
+</dt>
+<dd>
+  Optional API response for additional context.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
         <dt id="hashCode" class="property inherited">
   <span class="name"><a href="https://api.flutter.dev/flutter/dart-core/Object/hashCode.html">hashCode</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span>
@@ -114,12 +128,24 @@
 
         <dt id="message" class="property">
   <span class="name"><a href="../backdoor_flutter/BackdoorFlutterException/message.html">message</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   
 
 </dt>
 <dd>
-  An optional error message that provides details about the exception.
+  A descriptive message about the error.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="operationConfiguration" class="property">
+  <span class="name"><a href="../backdoor_flutter/BackdoorFlutterException/operationConfiguration.html">operationConfiguration</a></span>
+  <span class="signature">&#8594; <a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a>?</span>
+  
+
+</dt>
+<dd>
+  Optional operation configuration related to the error.
   <div class="features"><span class="feature">final</span></div>
 
 </dd>
@@ -133,6 +159,30 @@
 <dd class="inherited">
   A representation of the runtime type of the object.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="stackTrace" class="property">
+  <span class="name"><a href="../backdoor_flutter/BackdoorFlutterException/stackTrace.html">stackTrace</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/StackTrace-class.html">StackTrace</a>?</span>
+  
+
+</dt>
+<dd>
+  Optional stack trace for debugging purposes.
+  <div class="features"><span class="feature">final</span></div>
+
+</dd>
+
+        <dt id="type" class="property">
+  <span class="name"><a href="../backdoor_flutter/BackdoorFlutterException/type.html">type</a></span>
+  <span class="signature">&#8594; <a href="../backdoor_flutter/BackdoorFlutterExceptionType.html">BackdoorFlutterExceptionType</a></span>
+  
+
+</dt>
+<dd>
+  The type of the exception.
+  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
@@ -165,7 +215,7 @@
 
 </dt>
 <dd>
-  Returns a string representation of the exception.
+  A string representation of this object.
   <div class="features"><span class="feature">override</span></div>
 
 </dd>

@@ -57,9 +57,8 @@
 
     
 <section class="desc markdown">
-  <p>A model representing the payment status and related details for a specific app.</p>
-<p>This class includes information such as the payment status, expiry date, and developer details.
-It is used for serializing and deserializing the JSON representation of the app's payment status.</p>
+  <p>Represents the payment model for a backdoor application.</p>
+<p>This model includes the payment status and configuration details for an application.</p>
 </section>
 
 
@@ -89,10 +88,10 @@ It is used for serializing and deserializing the JSON representation of the app'
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="BackdoorPaymentModel" class="callable">
-          <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/BackdoorPaymentModel.html">BackdoorPaymentModel</a></span><span class="signature">({<span class="parameter" id="-param-expiryDate"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;expiry_date&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">expiryDate</span>, </span><span class="parameter" id="-param-status"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.4/freezed_annotation/Default-class.html">Default</a>(PaymentStatusEnum.UNPAID)</span> <span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;status&#39;)</span> <span class="type-annotation"><a href="../backdoor_flutter/PaymentStatusEnum.html">PaymentStatusEnum</a></span> <span class="parameter-name">status</span>, </span><span class="parameter" id="-param-message"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;message&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span> <span class="parameter-name">message</span>, </span><span class="parameter" id="-param-maxLaunch"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;max_launch&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxLaunch</span>, </span><span class="parameter" id="-param-developerDetails"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;developer_details&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">developerDetails</span>, </span><span class="parameter" id="-param-shouldCheckAfterPaid"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.4/freezed_annotation/Default-class.html">Default</a>(false)</span> <span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;should_check_after_paid&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">shouldCheckAfterPaid</span>, </span><span class="parameter" id="-param-strictMaxLaunch"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.4/freezed_annotation/Default-class.html">Default</a>(true)</span> <span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;strict_max_launch&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">strictMaxLaunch</span>, </span><span class="parameter" id="-param-minTargetBuildNumber"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.4/freezed_annotation/Default-class.html">Default</a>(&#39;0&#39;)</span> <span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;min_target_build_number&#39;)</span> <span class="type-annotation">dynamic</span> <span class="parameter-name">minTargetBuildNumber</span></span>})</span>
+          <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/BackdoorPaymentModel.html">BackdoorPaymentModel</a></span><span class="signature">({<span class="parameter" id="-param-status"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;status&#39;)</span> <span class="type-annotation"><a href="../backdoor_flutter/PaymentStatus.html">PaymentStatus</a>?</span> <span class="parameter-name">status</span>, </span><span class="parameter" id="-param-targetVersion"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;target_version&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span> <span class="parameter-name">targetVersion</span>, </span><span class="parameter" id="-param-shouldCheckAfterPaid"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.4/freezed_annotation/Default-class.html">Default</a>(false)</span> <span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;should_check_after_paid&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">shouldCheckAfterPaid</span>, </span><span class="parameter" id="-param-checkDuringTrial"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.4/freezed_annotation/Default-class.html">Default</a>(false)</span> <span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;check_during_trial&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">checkDuringTrial</span>, </span><span class="parameter" id="-param-expireDateTime"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;expire_date&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">expireDateTime</span>, </span><span class="parameter" id="-param-warningDate"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;warning_date&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span> <span class="parameter-name">warningDate</span>, </span><span class="parameter" id="-param-strictMaxLaunch"><span>@<a href="https://pub.dev/documentation/freezed_annotation/2.4.4/freezed_annotation/Default-class.html">Default</a>(true)</span> <span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;strict_max_launch&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">strictMaxLaunch</span>, </span><span class="parameter" id="-param-maxLaunch"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;max_launch&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span> <span class="parameter-name">maxLaunch</span>, </span><span class="parameter" id="-param-developerDetails"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;developer_details&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">developerDetails</span>, </span><span class="parameter" id="-param-additionalFields"><span>@<a href="https://pub.dev/documentation/json_annotation/4.9.0/json_annotation/JsonKey-class.html">JsonKey</a>(name: &#39;additional_fields&#39;)</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span> <span class="parameter-name">additionalFields</span></span>})</span>
         </dt>
         <dd>
-          Creates a new instance of <a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a>.
+          Creates an instance of <a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a>.
             <div class="constructor-modifier features">const</div>
             <div class="constructor-modifier features">factory</div>
         </dd>
@@ -100,7 +99,7 @@ It is used for serializing and deserializing the JSON representation of the app'
           <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/BackdoorPaymentModel.fromJson.html">BackdoorPaymentModel.fromJson</a></span><span class="signature">(<span class="parameter" id="fromJson-param-json"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">json</span></span>)</span>
         </dt>
         <dd>
-          Creates an instance of <a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a> from JSON.
+          Creates a <a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a> from a JSON map.
             <div class="constructor-modifier features">factory</div>
         </dd>
     </dl>
@@ -111,6 +110,30 @@ It is used for serializing and deserializing the JSON representation of the app'
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
+        <dt id="additionalFields" class="property inherited">
+  <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/additionalFields.html">additionalFields</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span>?</span>
+  
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="checkDuringTrial" class="property inherited">
+  <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/checkDuringTrial.html">checkDuringTrial</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
         <dt id="copyWith" class="property inherited">
   <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/copyWith.html">copyWith</a></span>
   <span class="signature">&#8594; $BackdoorPaymentModelCopyWith<span class="signature">&lt;<wbr><span class="type-parameter"><a href="../backdoor_flutter/BackdoorPaymentModel-class.html">BackdoorPaymentModel</a></span>&gt;</span></span>
@@ -136,8 +159,8 @@ with the given fields replaced by the non-null parameter values.
 
 </dd>
 
-        <dt id="expiryDate" class="property inherited">
-  <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/expiryDate.html">expiryDate</a></span>
+        <dt id="expireDateTime" class="property inherited">
+  <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/expireDateTime.html">expireDateTime</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span>
   
 
@@ -163,30 +186,6 @@ with the given fields replaced by the non-null parameter values.
         <dt id="maxLaunch" class="property inherited">
   <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/maxLaunch.html">maxLaunch</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a>?</span>
-  
-
-</dt>
-<dd class="inherited">
-  
-  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="message" class="property inherited">
-  <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/message.html">message</a></span>
-  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</span>
-  
-
-</dt>
-<dd class="inherited">
-  
-  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="minTargetBuildNumber" class="property inherited">
-  <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/minTargetBuildNumber.html">minTargetBuildNumber</a></span>
-  <span class="signature">&#8594; dynamic</span>
   
 
 </dt>
@@ -222,7 +221,7 @@ with the given fields replaced by the non-null parameter values.
 
         <dt id="status" class="property inherited">
   <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/status.html">status</a></span>
-  <span class="signature">&#8594; <a href="../backdoor_flutter/PaymentStatusEnum.html">PaymentStatusEnum</a></span>
+  <span class="signature">&#8594; <a href="../backdoor_flutter/PaymentStatus.html">PaymentStatus</a>?</span>
   
 
 </dt>
@@ -235,6 +234,30 @@ with the given fields replaced by the non-null parameter values.
         <dt id="strictMaxLaunch" class="property inherited">
   <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/strictMaxLaunch.html">strictMaxLaunch</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
+  
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="targetVersion" class="property inherited">
+  <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/targetVersion.html">targetVersion</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a>?</span>
+  
+
+</dt>
+<dd class="inherited">
+  
+  <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
+
+</dd>
+
+        <dt id="warningDate" class="property inherited">
+  <span class="name"><a href="../backdoor_flutter/BackdoorPaymentModel/warningDate.html">warningDate</a></span>
+  <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/DateTime-class.html">DateTime</a>?</span>
   
 
 </dt>
