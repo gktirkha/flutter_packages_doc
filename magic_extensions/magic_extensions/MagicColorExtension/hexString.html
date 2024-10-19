@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the magicContains method from the MagicIterableExtension extension, for the Dart programming language.">
-  <title>magicContains method - MagicIterableExtension extension - magic_extensions library - Dart API</title>
+  <meta name="description" content="API docs for the hexString method from the MagicColorExtension extension, for the Dart programming language.">
+  <title>hexString method - MagicColorExtension extension - magic_extensions library - Dart API</title>
 
 
   
@@ -26,10 +26,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions.dart</a></li>
-    <li><a href="../../magic_extensions/MagicIterableExtension.html">MagicIterableExtension<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
-    <li class="self-crumb">magicContains method</li>
+    <li><a href="../../magic_extensions/MagicColorExtension.html">MagicColorExtension</a></li>
+    <li class="self-crumb">hexString method</li>
   </ol>
-  <div class="self-name">magicContains</div>
+  <div class="self-name">hexString</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,35 +49,37 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="magic_extensions&#47;MagicIterableExtension-extension-sidebar.html"
+    data-above-sidebar="magic_extensions&#47;MagicColorExtension-extension-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">magicContains</span> method 
+<h1><span class="kind-method">hexString</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-<span class="name ">magicContains</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="magicContains-param-condition"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">condition</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation">E</span></span></li>
-</ol>)</span></li>
-</ol>)
+<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
+<span class="name ">hexString</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="hexString-param-defaultColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">defaultColor</span> = <span class="default-value">Colors.white</span>, </span></li>
+</ol>})
 
       
 
     </section>
     
 <section class="desc markdown">
-  <p>Returns <code>true</code> if the iterable contains an element that matches the given condition.</p>
-<p>Uses the <a href="../../magic_extensions/MagicUniversalExtension/magicBool.html">magicBool</a> method to convert each element to a boolean.
-The <code>condition</code> function is used to test each element.</p>
+  <p>Converts the color to a hexadecimal string representation.</p>
+<p>If the color is null, it defaults to the specified <code>defaultColor</code>.</p>
+<p>The returned string is in the format "0xAARRGGBB".</p>
+<p><code>defaultColor</code> is the color used when the original color is null.
+The default value is <a href="https://api.flutter.dev/flutter/material/Colors/white-constant.html">Colors.white</a>.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">bool magicContains(bool Function(E) condition) {
-  return any((element) =&gt; element != null &amp;&amp; condition(element));
+  <pre class="language-dart"><code class="language-dart">String hexString({Color defaultColor = Colors.white}) {
+  final Color color = this ?? defaultColor;
+  return &quot;0x${color.value.toRadixString(16).padLeft(8, &#39;0&#39;)}&quot;;
 }</code></pre>
 </section>
 
@@ -93,11 +95,11 @@ The <code>condition</code> function is used to test each element.</p>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions</a></li>
-    <li><a href="../../magic_extensions/MagicIterableExtension.html">MagicIterableExtension<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
-    <li class="self-crumb">magicContains method</li>
+    <li><a href="../../magic_extensions/MagicColorExtension.html">MagicColorExtension</a></li>
+    <li class="self-crumb">hexString method</li>
 </ol>
 
-    <h5>MagicIterableExtension extension on <a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></h5>
+    <h5>MagicColorExtension extension on <a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a>?</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">

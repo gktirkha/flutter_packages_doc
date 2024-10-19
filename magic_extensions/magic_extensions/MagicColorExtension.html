@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the MagicTimeExtension extension from the magic_extensions library, for the Dart programming language.">
-  <title>MagicTimeExtension extension - magic_extensions library - Dart API</title>
+  <meta name="description" content="API docs for the MagicColorExtension extension from the magic_extensions library, for the Dart programming language.">
+  <title>MagicColorExtension extension - magic_extensions library - Dart API</title>
 
 
   
@@ -26,9 +26,9 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../index.html">magic_extensions</a></li>
     <li><a href="../magic_extensions/magic_extensions-library.html">magic_extensions.dart</a></li>
-    <li class="self-crumb">MagicTimeExtension extension</li>
+    <li class="self-crumb">MagicColorExtension extension</li>
   </ol>
-  <div class="self-name">MagicTimeExtension</div>
+  <div class="self-name">MagicColorExtension</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,15 +49,15 @@
     id="dartdoc-main-content"
     class="main-content"
     data-above-sidebar="magic_extensions&#47;magic_extensions-library-sidebar.html"
-    data-below-sidebar="magic_extensions&#47;MagicTimeExtension-extension-sidebar.html">
+    data-below-sidebar="magic_extensions&#47;MagicColorExtension-extension-sidebar.html">
     <div>
-<h1><span class="kind-class">MagicTimeExtension</span> extension 
+<h1><span class="kind-class">MagicColorExtension</span> extension 
  
 </h1></div>
 
     
 <section class="desc markdown">
-  <p>Extension methods for nullable <a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a> objects.</p>
+  <p>An extension on <a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color?</a> that adds utility methods for color manipulation.</p>
 </section>
 
     <section>
@@ -65,7 +65,7 @@
         <dt>on</dt>
         <dd>
           <ul class="comma-separated clazz-relationships">
-            <li><a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a>?</li>
+            <li><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a>?</li>
           </ul>
         </dd>
       </dl>
@@ -80,41 +80,15 @@
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
-        <dt id="convert" class="callable">
-  <span class="name"><a href="../magic_extensions/MagicTimeExtension/convert.html">convert</a></span><span class="signature">(<wbr>{<span class="parameter" id="convert-param-placeHolder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">placeHolder</span> = <span class="default-value">&#39;&#39;</span>, </span><span class="parameter" id="convert-param-format"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span> <span class="parameter-name">format</span> = <span class="default-value">&#39;hh:mm a&#39;</span></span>})
+        <dt id="hexString" class="callable">
+  <span class="name"><a href="../magic_extensions/MagicColorExtension/hexString.html">hexString</a></span><span class="signature">(<wbr>{<span class="parameter" id="hexString-param-defaultColor"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">defaultColor</span> = <span class="default-value">Colors.white</span></span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>
   </span>
   
 
 </dt>
 <dd>
-  Formats the nullable <a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a> into a string representation.
-  
-
-</dd>
-
-        <dt id="isAfter" class="callable">
-  <span class="name"><a href="../magic_extensions/MagicTimeExtension/isAfter.html">isAfter</a></span><span class="signature">(<wbr><span class="parameter" id="isAfter-param-toTime"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a>?</span> <span class="parameter-name">toTime</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Checks if the nullable <a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a> is after another <a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a>.
-  
-
-</dd>
-
-        <dt id="isBefore" class="callable">
-  <span class="name"><a href="../magic_extensions/MagicTimeExtension/isBefore.html">isBefore</a></span><span class="signature">(<wbr><span class="parameter" id="isBefore-param-toTime"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a>?</span> <span class="parameter-name">toTime</span></span>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Checks if the nullable <a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a> is before another <a href="https://api.flutter.dev/flutter/material/TimeOfDay-class.html">TimeOfDay</a>.
+  Converts the color to a hexadecimal string representation.
   
 
 </dd>
@@ -137,7 +111,7 @@
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../index.html">magic_extensions</a></li>
     <li><a href="../magic_extensions/magic_extensions-library.html">magic_extensions</a></li>
-    <li class="self-crumb">MagicTimeExtension extension</li>
+    <li class="self-crumb">MagicColorExtension extension</li>
 </ol>
 
   <h5>magic_extensions library</h5>

@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the magicContains method from the MagicIterableExtension extension, for the Dart programming language.">
-  <title>magicContains method - MagicIterableExtension extension - magic_extensions library - Dart API</title>
+  <meta name="description" content="API docs for the toColor method from the MagicNullStringExtension extension, for the Dart programming language.">
+  <title>toColor method - MagicNullStringExtension extension - magic_extensions library - Dart API</title>
 
 
   
@@ -26,10 +26,10 @@
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions.dart</a></li>
-    <li><a href="../../magic_extensions/MagicIterableExtension.html">MagicIterableExtension<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
-    <li class="self-crumb">magicContains method</li>
+    <li><a href="../../magic_extensions/MagicNullStringExtension.html">MagicNullStringExtension</a></li>
+    <li class="self-crumb">toColor method</li>
   </ol>
-  <div class="self-name">magicContains</div>
+  <div class="self-name">toColor</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -49,35 +49,44 @@
 <div
     id="dartdoc-main-content"
     class="main-content"
-    data-above-sidebar="magic_extensions&#47;MagicIterableExtension-extension-sidebar.html"
+    data-above-sidebar="magic_extensions&#47;MagicNullStringExtension-extension-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">magicContains</span> method 
+<h1><span class="kind-method">toColor</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span>
-<span class="name ">magicContains</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="magicContains-param-condition"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/bool-class.html">bool</a></span> <span class="parameter-name">condition</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-"><span class="type-annotation">E</span></span></li>
-</ol>)</span></li>
-</ol>)
+<span class="returntype"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span>
+<span class="name ">toColor</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="toColor-param-placeholder"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">placeholder</span> = <span class="default-value">Colors.white</span>, </span></li>
+</ol>})
 
       
 
     </section>
     
 <section class="desc markdown">
-  <p>Returns <code>true</code> if the iterable contains an element that matches the given condition.</p>
-<p>Uses the <a href="../../magic_extensions/MagicUniversalExtension/magicBool.html">magicBool</a> method to convert each element to a boolean.
-The <code>condition</code> function is used to test each element.</p>
+  <p>Converts the current string representation of a color to a <a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a> object.</p>
+<p>If the string is null or cannot be parsed, it returns the provided
+<code>placeholder</code> color (default is <a href="https://api.flutter.dev/flutter/material/Colors/white-constant.html">Colors.white</a>).</p>
+<p>Parameters:</p>
+<ul>
+<li><code>placeholder</code>: The color to return if parsing fails. Defaults to white.</li>
+</ul>
+<p>Returns:</p>
+<ul>
+<li>A <a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a> object corresponding to the parsed value of the string,
+or the placeholder color if the string is null or invalid.</li>
+</ul>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">bool magicContains(bool Function(E) condition) {
-  return any((element) =&gt; element != null &amp;&amp; condition(element));
+  <pre class="language-dart"><code class="language-dart">Color toColor({Color placeholder = Colors.white}) {
+  if (this == null) return placeholder;
+  return Color(int.tryParse(this!) ?? placeholder.value);
 }</code></pre>
 </section>
 
@@ -93,11 +102,11 @@ The <code>condition</code> function is used to test each element.</p>
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions</a></li>
-    <li><a href="../../magic_extensions/MagicIterableExtension.html">MagicIterableExtension<span class="signature">&lt;<wbr><span class="type-parameter">E</span>&gt;</span></a></li>
-    <li class="self-crumb">magicContains method</li>
+    <li><a href="../../magic_extensions/MagicNullStringExtension.html">MagicNullStringExtension</a></li>
+    <li class="self-crumb">toColor method</li>
 </ol>
 
-    <h5>MagicIterableExtension extension on <a href="https://api.flutter.dev/flutter/dart-core/Iterable-class.html">Iterable</a><span class="signature">&lt;<wbr><span class="type-parameter">E?</span>&gt;</span></h5>
+    <h5>MagicNullStringExtension extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a>?</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
