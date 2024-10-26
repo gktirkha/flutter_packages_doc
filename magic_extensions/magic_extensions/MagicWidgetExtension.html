@@ -58,7 +58,7 @@
     
 <section class="desc markdown">
   <p>Extension on <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a> to provide convenient methods for wrapping
-widgets with <a href="https://api.flutter.dev/flutter/widgets/Flexible-class.html">Flexible</a> and <a href="https://api.flutter.dev/flutter/widgets/Expanded-class.html">Expanded</a>.</p>
+widgets with <a href="https://api.flutter.dev/flutter/widgets/Flexible-class.html">Flexible</a>, <a href="https://api.flutter.dev/flutter/widgets/Expanded-class.html">Expanded</a>, <a href="https://api.flutter.dev/flutter/widgets/Center-class.html">Center</a>, and debug widgets.</p>
 </section>
 
     <section>
@@ -82,14 +82,40 @@ widgets with <a href="https://api.flutter.dev/flutter/widgets/Flexible-class.htm
     <h2>Methods</h2>
     <dl class="callables">
         <dt id="center" class="callable">
-  <span class="name"><a href="../magic_extensions/MagicWidgetExtension/center.html">center</a></span><span class="signature">(<wbr>{<span class="parameter" id="center-param-flex"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">flex</span> = <span class="default-value">1</span>, </span><span class="parameter" id="center-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span></span>})
+  <span class="name"><a href="../magic_extensions/MagicWidgetExtension/center.html">center</a></span><span class="signature">(<wbr>{<span class="parameter" id="center-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span></span>})
     <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
   </span>
   
 
 </dt>
 <dd>
-  Wraps the widget in an <a href="https://api.flutter.dev/flutter/widgets/Center-class.html">Center</a> widget.
+  Wraps the widget in a <a href="https://api.flutter.dev/flutter/widgets/Center-class.html">Center</a> widget.
+  
+
+</dd>
+
+        <dt id="debugBorder" class="callable">
+  <span class="name"><a href="../magic_extensions/MagicWidgetExtension/debugBorder.html">debugBorder</a></span><span class="signature">(<wbr>{<span class="parameter" id="debugBorder-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="debugBorder-param-color"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">color</span> = <span class="default-value">Colors.red</span>, </span><span class="parameter" id="debugBorder-param-thickness"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">thickness</span> = <span class="default-value">1</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Wraps the widget in a <a href="https://api.flutter.dev/flutter/widgets/Container-class.html">Container</a> with a debug border.
+  
+
+</dd>
+
+        <dt id="debugContainer" class="callable">
+  <span class="name"><a href="../magic_extensions/MagicWidgetExtension/debugContainer.html">debugContainer</a></span><span class="signature">(<wbr>{<span class="parameter" id="debugContainer-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span><span class="parameter" id="debugContainer-param-color"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">color</span> = <span class="default-value">Colors.red</span></span>})
+    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
+  </span>
+  
+
+</dt>
+<dd>
+  Wraps the widget in a <a href="https://api.flutter.dev/flutter/widgets/Container-class.html">Container</a> with a debug color.
   
 
 </dd>
@@ -150,7 +176,7 @@ widgets with <a href="https://api.flutter.dev/flutter/widgets/Flexible-class.htm
 <footer>
   <span class="no-break">
     magic_extensions
-      0.0.3
+      0.0.4
   </span>
   
 </footer>

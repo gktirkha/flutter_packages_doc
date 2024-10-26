@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the flexible method from the MagicWidgetExtension extension, for the Dart programming language.">
-  <title>flexible method - MagicWidgetExtension extension - magic_extensions library - Dart API</title>
+  <meta name="description" content="API docs for the debugBorder method from the MagicWidgetExtension extension, for the Dart programming language.">
+  <title>debugBorder method - MagicWidgetExtension extension - magic_extensions library - Dart API</title>
 
 
   
@@ -27,9 +27,9 @@
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions.dart</a></li>
     <li><a href="../../magic_extensions/MagicWidgetExtension.html">MagicWidgetExtension</a></li>
-    <li class="self-crumb">flexible method</li>
+    <li class="self-crumb">debugBorder method</li>
   </ol>
-  <div class="self-name">flexible</div>
+  <div class="self-name">debugBorder</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -52,15 +52,15 @@
     data-above-sidebar="magic_extensions&#47;MagicWidgetExtension-extension-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">flexible</span> method 
+<h1><span class="kind-method">debugBorder</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
 <span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
-<span class="name ">flexible</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="flexible-param-fit"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/rendering/FlexFit.html">FlexFit</a></span> <span class="parameter-name">fit</span> = <span class="default-value">FlexFit.loose</span>, </span></li>
-<li><span class="parameter" id="flexible-param-flex"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/int-class.html">int</a></span> <span class="parameter-name">flex</span> = <span class="default-value">1</span>, </span></li>
-<li><span class="parameter" id="flexible-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
+<span class="name ">debugBorder</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="debugBorder-param-key"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a>?</span> <span class="parameter-name">key</span>, </span></li>
+<li><span class="parameter" id="debugBorder-param-color"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/painting/Color-class.html">Color</a></span> <span class="parameter-name">color</span> = <span class="default-value">Colors.red</span>, </span></li>
+<li><span class="parameter" id="debugBorder-param-thickness"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/double-class.html">double</a></span> <span class="parameter-name">thickness</span> = <span class="default-value">1</span>, </span></li>
 </ol>})
 
       
@@ -68,14 +68,15 @@
     </section>
     
 <section class="desc markdown">
-  <p>Wraps the widget in a <a href="https://api.flutter.dev/flutter/widgets/Flexible-class.html">Flexible</a> widget.</p>
-<p>The <code>fit</code> parameter determines how the child is resized within
-the parent <a href="https://api.flutter.dev/flutter/widgets/Flex-class.html">Flex</a> container. It defaults to <a href="https://api.flutter.dev/flutter/src_rendering_flex/FlexFit.html">FlexFit.loose</a>.</p>
-<p>The <code>flex</code> parameter defines the flex factor, defaulting to <code>1</code>.</p>
+  <p>Wraps the widget in a <a href="https://api.flutter.dev/flutter/widgets/Container-class.html">Container</a> with a debug border.</p>
 <p>The <code>key</code> parameter is optional and can be used to provide a
-<a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a> for the <a href="https://api.flutter.dev/flutter/widgets/Flexible-class.html">Flexible</a> widget.</p>
+<a href="https://api.flutter.dev/flutter/foundation/Key-class.html">Key</a> for the <a href="https://api.flutter.dev/flutter/widgets/Container-class.html">Container</a>.</p>
+<p>The <code>color</code> parameter specifies the color of the border,
+defaulting to red.</p>
+<p>The <code>thickness</code> parameter specifies the width of the border,
+defaulting to <code>1</code>.</p>
 <p>Example usage:</p>
-<pre class="language-dart"><code class="language-dart">Text('Flexible Text').flexible(fit: FlexFit.tight, flex: 2);
+<pre class="language-dart"><code class="language-dart">Text('Debug Border').debugBorder();
 </code></pre>
 </section>
 
@@ -83,15 +84,19 @@ the parent <a href="https://api.flutter.dev/flutter/widgets/Flex-class.html">Fle
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Widget flexible({
-  FlexFit fit = FlexFit.loose,
-  int flex = 1,
+  <pre class="language-dart"><code class="language-dart">Widget debugBorder({
   Key? key,
+  Color color = Colors.red,
+  double thickness = 1,
 }) =&gt;
-    Flexible(
-      fit: fit,
-      flex: flex,
+    Container(
       key: key,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: color,
+          width: thickness,
+        ),
+      ),
       child: this,
     );</code></pre>
 </section>
@@ -109,7 +114,7 @@ the parent <a href="https://api.flutter.dev/flutter/widgets/Flex-class.html">Fle
     <li><a href="../../index.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/magic_extensions-library.html">magic_extensions</a></li>
     <li><a href="../../magic_extensions/MagicWidgetExtension.html">MagicWidgetExtension</a></li>
-    <li class="self-crumb">flexible method</li>
+    <li class="self-crumb">debugBorder method</li>
 </ol>
 
     <h5>MagicWidgetExtension extension on <a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></h5>
