@@ -16,20 +16,16 @@
   <link rel="stylesheet" href="../../static-assets/github.css?v1">
   <link rel="stylesheet" href="../../static-assets/styles.css?v1">
   <link rel="icon" href="../../static-assets/favicon.png?v1">
-
   
 </head>
 
-
 <body data-base-href="../../" data-using-base-href="false" class="light-theme">
-
 <div id="overlay-under-drawer"></div>
-
 <header id="title">
   <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
   <ol class="breadcrumbs gt-separated dark hidden-xs">
     <li><a href="../../index.html">magic_image</a></li>
-    <li><a href="../../magic_image/magic_image-library.html">magic_image.dart</a></li>
+    <li><a href="../../magic_image/">magic_image.dart</a></li>
     <li><a href="../../magic_image/MagicImage-class.html">MagicImage</a></li>
     <li class="self-crumb">build method</li>
   </ol>
@@ -50,7 +46,6 @@
   </div>
 </header>
 <main>
-
 <div
     id="dartdoc-main-content"
     class="main-content"
@@ -67,7 +62,6 @@
         <li>@<a href="https://api.flutter.dev/flutter/dart-core/override-constant.html">override</a></li>
     </ol>
   </div>
-
 <span class="returntype"><a href="https://api.flutter.dev/flutter/widgets/Widget-class.html">Widget</a></span>
 <span class="name ">build</span>(<wbr><ol class="parameter-list single-line"> <li><span class="parameter" id="build-param-context"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/widgets/BuildContext-class.html">BuildContext</a></span> <span class="parameter-name">context</span></span></li>
 </ol>)
@@ -118,92 +112,161 @@ and</li>
   <h2><span>Implementation</span></h2>
   <pre class="language-dart"><code class="language-dart">@override
 Widget build(BuildContext context) {
-  return LayoutBuilder(
-    builder: (BuildContext context, BoxConstraints constraints) {
-      final double minSize = min(constraints.maxHeight, constraints.maxWidth);
-      final double loaderSize =
-          defaultPlaceHolderSize ?? (minSize &gt; 40 ? 40 : minSize &#47; 2);
-      return Container(
-        clipBehavior: clipBehavior,
-        decoration: boxDecoration,
-        width: squareDimension ?? width,
-        height: squareDimension ?? height,
-        child: path.isURL
-            ? path.endsWith(&#39;.svg&#39;)
-                ? SvgPicture.network(
-                    headers: headers,
-                    width: squareDimension ?? width,
-                    height: squareDimension ?? height,
-                    path,
-                    placeholderBuilder: (BuildContext context) =&gt;
-                        svgPlaceHolder ??
-                        placeholderWidget ??
-                        Center(
-                          child: SizedBox.square(
-                            dimension: loaderSize,
-                            child: const CircularProgressIndicator(),
+  return GestureDetector(
+    onTap: onTap,
+    onDoubleTap: onDoubleTap,
+    onDoubleTapCancel: onDoubleTapCancel,
+    onDoubleTapDown: onDoubleTapDown,
+    onForcePressEnd: onForcePressEnd,
+    onForcePressPeak: onForcePressPeak,
+    onForcePressStart: onForcePressStart,
+    onForcePressUpdate: onForcePressUpdate,
+    onHorizontalDragCancel: onHorizontalDragCancel,
+    onHorizontalDragDown: onHorizontalDragDown,
+    onHorizontalDragEnd: onHorizontalDragEnd,
+    onHorizontalDragStart: onHorizontalDragStart,
+    onHorizontalDragUpdate: onHorizontalDragUpdate,
+    onLongPress: onLongPress,
+    onLongPressCancel: onLongPressCancel,
+    onLongPressDown: onLongPressDown,
+    onLongPressEnd: onLongPressEnd,
+    onLongPressMoveUpdate: onLongPressMoveUpdate,
+    onLongPressStart: onLongPressStart,
+    onLongPressUp: onLongPressUp,
+    onPanCancel: onPanCancel,
+    onPanDown: onPanDown,
+    onPanEnd: onPanEnd,
+    onPanStart: onPanStart,
+    onPanUpdate: onPanUpdate,
+    onScaleEnd: onScaleEnd,
+    onScaleStart: onScaleStart,
+    onScaleUpdate: onScaleUpdate,
+    onSecondaryLongPress: onSecondaryLongPress,
+    onSecondaryLongPressCancel: onSecondaryLongPressCancel,
+    onSecondaryLongPressDown: onSecondaryLongPressDown,
+    onSecondaryLongPressEnd: onSecondaryLongPressEnd,
+    onSecondaryLongPressMoveUpdate: onSecondaryLongPressMoveUpdate,
+    onSecondaryLongPressStart: onSecondaryLongPressStart,
+    onSecondaryLongPressUp: onSecondaryLongPressUp,
+    onSecondaryTap: onSecondaryTap,
+    onSecondaryTapCancel: onSecondaryTapCancel,
+    onSecondaryTapDown: onSecondaryTapDown,
+    onSecondaryTapUp: onSecondaryTapUp,
+    onTapCancel: onTapCancel,
+    onTapDown: onTapDown,
+    onTapUp: onTapUp,
+    onTertiaryLongPress: onTertiaryLongPress,
+    onTertiaryLongPressCancel: onTertiaryLongPressCancel,
+    onTertiaryLongPressDown: onTertiaryLongPressDown,
+    onTertiaryLongPressEnd: onTertiaryLongPressEnd,
+    onTertiaryLongPressMoveUpdate: onTertiaryLongPressMoveUpdate,
+    onTertiaryLongPressStart: onTertiaryLongPressStart,
+    onTertiaryLongPressUp: onTertiaryLongPressUp,
+    onTertiaryTapCancel: onTertiaryTapCancel,
+    onTertiaryTapDown: onTertiaryTapDown,
+    onTertiaryTapUp: onTertiaryTapUp,
+    onVerticalDragCancel: onVerticalDragCancel,
+    onVerticalDragDown: onVerticalDragDown,
+    onVerticalDragEnd: onVerticalDragEnd,
+    onVerticalDragStart: onVerticalDragStart,
+    onVerticalDragUpdate: onVerticalDragUpdate,
+    behavior: behavior,
+    dragStartBehavior: dragStartBehavior,
+    excludeFromSemantics: excludeFromSemantics,
+    supportedDevices: supportedDevices,
+    trackpadScrollToScaleFactor: trackpadScrollToScaleFactor,
+    trackpadScrollCausesScale: trackpadScrollCausesScale,
+    child: LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        final double minSize =
+            min(constraints.maxHeight, constraints.maxWidth);
+        final double loaderSize =
+            defaultPlaceHolderSize ?? (minSize &gt; 40 ? 40 : minSize &#47; 2);
+        return Container(
+          clipBehavior: clipBehavior,
+          decoration: boxDecoration,
+          width: squareDimension ?? width,
+          height: squareDimension ?? height,
+          child: path.isURL
+              ? path.isSVG
+                  ? SvgPicture.network(
+                      headers: headers,
+                      width: squareDimension ?? width,
+                      height: squareDimension ?? height,
+                      Uri.parse(path).toString(),
+                      placeholderBuilder: (BuildContext context) =&gt;
+                          svgPlaceHolder ??
+                          placeholderWidget ??
+                          Center(
+                            child: SizedBox.square(
+                              dimension: loaderSize,
+                              child: const CircularProgressIndicator(),
+                            ),
                           ),
-                        ),
-                    fit: fit ?? BoxFit.contain,
-                    colorFilter: colorFilter != null
-                        ? colorFilter
-                        : (color == null || blendMode == null)
-                            ? null
-                            : ColorFilter.mode(color!, blendMode!),
-                  )
-                : CachedNetworkImage(
-                    httpHeaders: headers,
-                    repeat: repeat,
-                    width: squareDimension ?? width,
-                    height: squareDimension ?? height,
-                    imageUrl: path,
-                    placeholder: (BuildContext context, String url) =&gt;
-                        placeholderWidget ??
-                        Center(
-                          child: SizedBox.square(
-                            dimension: loaderSize,
-                            child: const CircularProgressIndicator(),
+                      fit: fit ?? BoxFit.contain,
+                      colorFilter: colorFilter != null
+                          ? colorFilter
+                          : (color == null || blendMode == null)
+                              ? null
+                              : ColorFilter.mode(color!, blendMode!),
+                    )
+                  : CachedNetworkImage(
+                      httpHeaders: headers,
+                      repeat: repeat,
+                      width: squareDimension ?? width,
+                      height: squareDimension ?? height,
+                      imageUrl: Uri.parse(path).toString(),
+                      placeholder: (BuildContext context, String url) =&gt;
+                          placeholderWidget ??
+                          Center(
+                            child: SizedBox.square(
+                              dimension: loaderSize,
+                              child: const CircularProgressIndicator(),
+                            ),
                           ),
-                        ),
-                    errorWidget:
-                        (BuildContext context, String url, Object error) =&gt;
-                            errorWidget ?? const SizedBox.shrink(),
-                    fit: fit,
-                    color: color,
-                    colorBlendMode: blendMode,
-                  )
-            : path.endsWith(&#39;.svg&#39;)
-                ? SvgPicture.asset(
-                    width: squareDimension ?? width,
-                    height: squareDimension ?? height,
-                    path,
-                    fit: fit ?? BoxFit.contain,
-                    colorFilter: colorFilter != null
-                        ? colorFilter
-                        : (color == null || blendMode == null)
-                            ? null
-                            : ColorFilter.mode(color!, blendMode!),
-                  )
-                : Image.asset(
-                    path,
-                    fit: fit,
-                    width: squareDimension ?? width,
-                    height: squareDimension ?? height,
-                    repeat: repeat,
-                    color: color,
-                    colorBlendMode: blendMode,
-                    errorBuilder: (context, error, stackTrace) =&gt;
-                        errorWidget ?? const SizedBox.shrink(),
-                  ),
-      );
-    },
+                      errorWidget:
+                          (BuildContext context, String url, Object error) {
+                        onError?.call(error, null);
+                        return errorWidget ?? const SizedBox.shrink();
+                      },
+                      fit: fit,
+                      color: color,
+                      colorBlendMode: blendMode,
+                    )
+              : path.isSVG
+                  ? SvgPicture.asset(
+                      width: squareDimension ?? width,
+                      height: squareDimension ?? height,
+                      path,
+                      fit: fit ?? BoxFit.contain,
+                      colorFilter: colorFilter != null
+                          ? colorFilter
+                          : (color == null || blendMode == null)
+                              ? null
+                              : ColorFilter.mode(color!, blendMode!),
+                    )
+                  : Image.asset(
+                      path,
+                      fit: fit,
+                      width: squareDimension ?? width,
+                      height: squareDimension ?? height,
+                      repeat: repeat,
+                      color: color,
+                      colorBlendMode: blendMode,
+                      errorBuilder: (context, error, stackTrace) {
+                        onError?.call(error, stackTrace);
+                        return errorWidget ?? const SizedBox.shrink();
+                      },
+                    ),
+        );
+      },
+    ),
   );
 }</code></pre>
 </section>
 
 
   </div> <!-- /.main-content -->
-
   <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
     <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
 <header id="header-search-sidebar" class="hidden-l">
@@ -211,41 +274,31 @@ Widget build(BuildContext context) {
     <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
 </header>
-
 <ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
     <li><a href="../../index.html">magic_image</a></li>
-    <li><a href="../../magic_image/magic_image-library.html">magic_image</a></li>
+    <li><a href="../../magic_image/">magic_image</a></li>
     <li><a href="../../magic_image/MagicImage-class.html">MagicImage</a></li>
     <li class="self-crumb">build method</li>
 </ol>
 
-
     <h5>MagicImage class</h5>
     <div id="dartdoc-sidebar-left-content"></div>
   </div><!--/.sidebar-offcanvas-->
-
   <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
 </div><!--/.sidebar-offcanvas-->
-
 </main>
-
 <footer>
   <span class="no-break">
     magic_image
       0.0.1
   </span>
-
   
 </footer>
-
 
 
 <script src="../../static-assets/highlight.pack.js?v1"></script>
 <script src="../../static-assets/docs.dart.js"></script>
 
-
-
 </body>
-
 </html>
 
