@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+  <meta name="description" content="ntt_atom_flutter API docs, for the Dart programming language.">
+  <title>ntt_atom_flutter - Dart API docs</title>
+
+
+  
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet">
+  
+  <link rel="stylesheet" href="static-assets/github.css?v1">
+  <link rel="stylesheet" href="static-assets/styles.css?v1">
+  <link rel="icon" href="static-assets/favicon.png?v1">
+  
+</head>
+
+<body data-base-href="" data-using-base-href="false" class="light-theme">
+<div id="overlay-under-drawer"></div>
+<header id="title">
+  <span id="sidenav-left-toggle" class="material-symbols-outlined" role="button" tabindex="0">menu</span>
+  <ol class="breadcrumbs gt-separated dark hidden-xs">
+    <li><a href="https://github.com/gktirkha/ntt_atom_flutter">ntt_atom_flutter package</a></li>
+  </ol>
+  <div class="self-name">ntt_atom_flutter</div>
+  <form class="search navbar-right" role="search">
+    <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+  <div class="toggle" id="theme-button" title="Toggle brightness">
+    <label for="theme">
+      <input type="checkbox" id="theme" value="light-theme">
+      <span id="dark-theme-button" class="material-symbols-outlined">
+        dark_mode
+      </span>
+      <span id="light-theme-button" class="material-symbols-outlined">
+        light_mode
+      </span>
+    </label>
+  </div>
+</header>
+<main>
+  <div id="dartdoc-main-content" class="main-content">
+      
+<section class="desc markdown">
+  <h1 id="ntt-atom-pay-flutter-sdk">NTT Atom Pay Flutter SDK</h1>
+<p>This Package Provides Simpler Integration For NTT Atom pay</p>
+<p>Example:</p>
+<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+import 'package:ntt_atom_flutter/ntt_atom_flutter.dart';
+
+void main() {
+  runApp(const MainApp());
+}
+
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      navigatorObservers: [AtomSDK.atomNavigatorObserver],
+      home: Home(),
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            final AtomSDK instance = AtomSDK(
+              onClose: (status, data) {
+                print('Status $status');
+                print('Data $data');
+              },
+              options: AtomPaymentOptions(
+                login: '317157',
+                password: 'Test@123',
+                prodid: 'NSE',
+                requestHashKey: 'KEY1234567234',
+                responseHashKey: 'KEYRESP123657234',
+                requestEncryptionKey: 'A4476C2062FFA58980DC8F79EB6A799E',
+                responseDecryptionKey: '75AEF0FA1B94B3C10D4F5B268F757F11',
+                txncurr: 'INR',
+                amount: '400',
+                merchType: 'R',
+                mccCode: '5499',
+                clientcode: 'NAVIN',
+                address: 'mumbai',
+                custFirstName: 'test',
+                custLastName: 'test',
+                email: 'test@gmail.com',
+                mobile: '8888888888',
+                custacc: '639827',
+                udf1: 'udf1',
+                udf2: 'udf2',
+                udf3: 'udf3',
+                udf4: 'udf4',
+                udf5: 'udf5',
+                mode: AtomPaymentMode.uat,
+                txnid: 'test240223',
+              ),
+            );
+            instance.startPayment();
+          },
+          child: Text('Start Payment'),
+        ),
+      ),
+    );
+  }
+}
+</code></pre>
+<h2 id="usage">Usage</h2>
+<ol>
+<li>
+<p>add <code>AtomSDK.atomNavigatorObserver</code> in app navigatorObservers</p>
+<pre class="language-dart"><code class="language-dart">MaterialApp(
+  navigatorObservers: [AtomSDK.atomNavigatorObserver],
+  home: Home(),
+);
+</code></pre>
+</li>
+<li>
+<p>initialize the object</p>
+<pre class="language-dart"><code class="language-dart">final AtomSDK instance = AtomSDK(
+            onClose: (status, data) {
+                print('Status $status');
+                print('Data $data');
+            },
+            options: AtomPaymentOptions(
+                login: '317157',
+                password: 'Test@123',
+                prodid: 'NSE',
+                requestHashKey: 'KEY1234567234',
+                responseHashKey: 'KEYRESP123657234',
+                requestEncryptionKey: 'A4476C2062FFA58980DC8F79EB6A799E',
+                responseDecryptionKey: '75AEF0FA1B94B3C10D4F5B268F757F11',
+                txncurr: 'INR',
+                amount: '400',
+                merchType: 'R',
+                mccCode: '5499',
+                clientcode: 'NAVIN',
+                address: 'mumbai',
+                custFirstName: 'test',
+                custLastName: 'test',
+                email: 'test@gmail.com',
+                mobile: '8888888888',
+                custacc: '639827',
+                udf1: 'udf1',
+                udf2: 'udf2',
+                udf3: 'udf3',
+                udf4: 'udf4',
+                udf5: 'udf5',
+                mode: AtomPaymentMode.uat,
+                txnid: 'test240223',
+                returnUrl: "dummy.com"
+            ),
+        );
+</code></pre>
+</li>
+<li>
+<p>Start Payment</p>
+<pre class="language-dart"><code class="language-dart">  instance.startPayment();
+</code></pre>
+</li>
+</ol>
+<h2 id="drawbacks-of-using-a-custom-return-url">Drawbacks of Using a Custom Return URL</h2>
+<p>When initializing a transaction, the <strong>returnUrl</strong> is optional. However, using a custom return URL comes with some limitations:</p>
+<ol>
+<li>
+<p><strong>Limited Transaction Status Detection:</strong></p>
+<ul>
+<li>If a return URL is provided, the SDK <strong>cannot automatically detect the transaction status</strong> or retrieve data from NTT.</li>
+<li>Instead, the SDK will return whatever response it receives from the server as a raw string.</li>
+</ul>
+</li>
+<li>
+<p><strong>No Webhook Notification:</strong></p>
+<ul>
+<li>If a return URL is <strong>not</strong> provided, the backend server <strong>will not receive a webhook response</strong> from NTT.</li>
+</ul>
+</li>
+</ol>
+<h3 id="solution"><strong>Solution:</strong></h3>
+<p>If you choose to use a custom return URL, you will need to set up a <strong>custom backend API</strong> to manually check the transaction status. This ensures you can verify payments reliably.</p>
+<p>Contributions are welcome! Please fork the repository and submit a pull request. For bug reports or feature requests, please open an issue on the <a href="https://github.com/gktirkha/ntt_atom_flutter">GitHub repository.</a></p>
+<h1 id="license">License</h1>
+<p>ntt_atom_flutter is licensed under the MIT License. See the <a href="../LICENSE">LICENSE</a> file for details.</p>
+<h1 id="api-reference">API reference</h1>
+<p>Please check <a href="https://gktirkha.github.io/flutter_packages_doc/ntt_atom_flutter">API reference</a> for documentation</p>
+</section>
+
+
+      <section class="summary">
+          <h2>Libraries</h2>
+        <dl>
+          <dt id="ntt_atom_flutter">
+  <span class="name"><a href="ntt_atom_flutter/">ntt_atom_flutter</a></span> 
+
+</dt>
+<dd>
+</dd>
+
+        </dl>
+      </section>
+  </div> <!-- /.main-content -->
+  <div id="dartdoc-sidebar-left" class="sidebar sidebar-offcanvas-left">
+    <!-- The search input and breadcrumbs below are only responsively visible at low resolutions. -->
+<header id="header-search-sidebar" class="hidden-l">
+  <form class="search-sidebar" role="search">
+    <input type="text" id="search-sidebar" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
+  </form>
+</header>
+<ol class="breadcrumbs gt-separated dark hidden-l" id="sidebar-nav">
+    <li><a href="https://github.com/gktirkha/ntt_atom_flutter">ntt_atom_flutter package</a></li>
+</ol>
+
+    <h5 class="hidden-xs"><span class="package-name">ntt_atom_flutter</span> <span class="package-kind">package</span></h5>
+    <ol>
+      <li class="section-title">Libraries</li>
+      <li><a href="ntt_atom_flutter/">ntt_atom_flutter</a></li>
+</ol>
+
+  </div>
+  <div id="dartdoc-sidebar-right" class="sidebar sidebar-offcanvas-right">
+  </div>
+</main>
+<footer>
+  <span class="no-break">
+    ntt_atom_flutter
+      0.0.1
+  </span>
+  
+</footer>
+
+
+<script src="../dark_theme.js"></script>
+<script src="static-assets/highlight.pack.js?v1"></script>
+<script src="static-assets/docs.dart.js"></script>
+
+</body>
+</html>
+
