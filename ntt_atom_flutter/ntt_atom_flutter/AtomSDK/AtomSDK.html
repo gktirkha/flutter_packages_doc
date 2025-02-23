@@ -27,7 +27,7 @@
     <li><a href="../../index.html">ntt_atom_flutter</a></li>
     <li><a href="../../ntt_atom_flutter/">ntt_atom_flutter.dart</a></li>
     <li><a href="../../ntt_atom_flutter/AtomSDK-class.html">AtomSDK</a></li>
-    <li class="self-crumb">AtomSDK constructor</li>
+    <li class="self-crumb">AtomSDK factory constructor</li>
   </ol>
   <div class="self-name">AtomSDK</div>
   <form class="search navbar-right" role="search">
@@ -57,26 +57,18 @@
 
     <section class="multi-line-signature">
       
-      <span class="name ">AtomSDK</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="-param-onClose"><span>required</span> <span class="type-annotation">dynamic</span> <span class="parameter-name">onClose</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-status"><span class="type-annotation"><a href="../../ntt_atom_flutter/AtomTransactionStatus.html">AtomTransactionStatus</a></span> <span class="parameter-name">status</span>, </span></li>
-<li><span class="parameter" id="param-data"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a></span> <span class="parameter-name">data</span></span></li>
-</ol>), </span></li>
-<li><span class="parameter" id="-param-options"><span>required</span> <span class="type-annotation"><a href="../../ntt_atom_flutter/AtomPaymentOptions-class.html">AtomPaymentOptions</a></span> <span class="parameter-name">options</span>, </span></li>
-</ol>})
+      <span class="name ">AtomSDK</span>(<wbr>)
     </section>
     
 <section class="desc markdown">
-  <p>Creates an instance of <a href="../../ntt_atom_flutter/AtomSDK-class.html">AtomSDK</a>.</p>
-<ul>
-<li><code>onClose</code>: A callback function that triggers when the transaction completes.</li>
-<li><code>options</code>: The payment options required for processing transactions.</li>
-</ul>
+  <p>Private constructor for singleton instance.</p>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">AtomSDK({required this.onClose, required this.options});</code></pre>
+  <pre class="language-dart"><code class="language-dart">factory AtomSDK() =&gt; _instance;</code></pre>
 </section>
 
 
@@ -92,7 +84,7 @@
     <li><a href="../../index.html">ntt_atom_flutter</a></li>
     <li><a href="../../ntt_atom_flutter/">ntt_atom_flutter</a></li>
     <li><a href="../../ntt_atom_flutter/AtomSDK-class.html">AtomSDK</a></li>
-    <li class="self-crumb">AtomSDK constructor</li>
+    <li class="self-crumb">AtomSDK factory constructor</li>
 </ol>
 
     <h5>AtomSDK class</h5>
@@ -104,7 +96,7 @@
 <footer>
   <span class="no-break">
     ntt_atom_flutter
-      1.0.1
+      1.0.2
   </span>
   
 </footer>

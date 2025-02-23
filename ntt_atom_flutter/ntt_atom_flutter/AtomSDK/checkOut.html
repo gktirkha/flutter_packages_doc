@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the startPayment method from the AtomSDK class, for the Dart programming language.">
-  <title>startPayment method - AtomSDK class - ntt_atom_flutter library - Dart API</title>
+  <meta name="description" content="API docs for the checkOut method from the AtomSDK class, for the Dart programming language.">
+  <title>checkOut method - AtomSDK class - ntt_atom_flutter library - Dart API</title>
 
 
   
@@ -27,9 +27,9 @@
     <li><a href="../../index.html">ntt_atom_flutter</a></li>
     <li><a href="../../ntt_atom_flutter/">ntt_atom_flutter.dart</a></li>
     <li><a href="../../ntt_atom_flutter/AtomSDK-class.html">AtomSDK</a></li>
-    <li class="self-crumb">startPayment method</li>
+    <li class="self-crumb">checkOut method</li>
   </ol>
-  <div class="self-name">startPayment</div>
+  <div class="self-name">checkOut</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
@@ -52,58 +52,70 @@
     data-above-sidebar="ntt_atom_flutter&#47;AtomSDK-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-method">startPayment</span> method 
+<h1><span class="kind-method">checkOut</span> method 
 </h1></div>
 
     <section class="multi-line-signature">
       
-<span class="returntype"><a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-<span class="name ">startPayment</span>(<wbr>)
+<span class="returntype">void</span>
+<span class="name ">checkOut</span>(<wbr>{<ol class="parameter-list"> <li><span class="parameter" id="checkOut-param-sdkOptions"><span>required</span> <span class="type-annotation"><a href="../../ntt_atom_flutter/AtomPaymentOptions-class.html">AtomPaymentOptions</a></span> <span class="parameter-name">sdkOptions</span>, </span></li>
+<li><span class="parameter" id="checkOut-param-onClose"><span>required</span> <span class="type-annotation">dynamic</span> <span class="parameter-name">onClose</span>(<ol class="parameter-list single-line"> <li><span class="parameter" id="param-transactionStatus"><span class="type-annotation"><a href="../../ntt_atom_flutter/AtomTransactionStatus.html">AtomTransactionStatus</a></span> <span class="parameter-name">transactionStatus</span>, </span></li>
+<li><span class="parameter" id="param-data"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">data</span></span></li>
+</ol>), </span></li>
+</ol>})
 
       
 
     </section>
     
 <section class="desc markdown">
-  <p>Starts the Atom payment process.</p>
-<p>This method initializes the payment flow by navigating to the
-<code>PreProcessorPage</code> within a dialog route.</p>
+  <p>Initiates the payment checkout process.</p>
+<ul>
+<li><code>sdkOptions</code>: The payment options to be used for the transaction.</li>
+<li><code>onClose</code>: Callback function triggered when the transaction completes or is closed.</li>
+</ul>
 </section>
 
 
     
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">Future&lt;void&gt; startPayment() async {
+  <pre class="language-dart"><code class="language-dart">void checkOut({
+  required AtomPaymentOptions sdkOptions,
+  required Function(
+    AtomTransactionStatus transactionStatus,
+    Map&lt;String, dynamic&gt; data,
+  )
+  onClose,
+}) {
   try {
-    if (_navigator == null) {
-      throw Exception(&#39;Please add AtomSDK.navigatorObserver to MaterialApp&#39;);
-    } else {
+    _onClose = onClose;
+    final navigator = _internalNaviGator.navigator;
+    if (navigator == null) {
       log(
-        &#39;AtomSDK.navigatorObserver is added to MaterialApp&#39;,
-        name: _logMessageName,
+        &#39;Please Add AtomSDK.navigatorObserver to navigator observer&#39;,
+        name: _logLabel,
       );
+      return;
     }
+    options = sdkOptions;
+    navigator.push(
+      AtomDialogRoute(
+        pageBuilder:
+            (context, animation, secondaryAnimation) =&gt; PreProcessorPage(),
+      ),
+    );
 
     log(
       &#39;AtomSDK.atomPaymentOptions is set\n ${jsonEncode(options)}&#39;,
-      name: _logMessageName,
-    );
-
-    _navigator!.push(
-      AtomDialogRoute(
-        pageBuilder:
-            (context, animation, secondaryAnimation) =&gt; PreProcessorPage(
-              instance: this,
-              navigator: _atomNavigatorObserver,
-            ),
-      ),
+      name: _logLabel,
     );
   } catch (e) {
-    log(e.toString(), name: _logMessageName);
-    if (_navigator != null) {
-      _atomNavigatorObserver.closeAtomSDK();
-    }
+    log(e.toString(), name: _logLabel);
+    close(
+      transactionStatus: AtomTransactionStatus.unknown,
+      data: {&#39;message&#39;: &#39;An Unknown Error Occurred&#39;, &#39;error&#39;: e.toString()},
+    );
   }
 }</code></pre>
 </section>
@@ -121,7 +133,7 @@
     <li><a href="../../index.html">ntt_atom_flutter</a></li>
     <li><a href="../../ntt_atom_flutter/">ntt_atom_flutter</a></li>
     <li><a href="../../ntt_atom_flutter/AtomSDK-class.html">AtomSDK</a></li>
-    <li class="self-crumb">startPayment method</li>
+    <li class="self-crumb">checkOut method</li>
 </ol>
 
     <h5>AtomSDK class</h5>
@@ -133,7 +145,7 @@
 <footer>
   <span class="no-break">
     ntt_atom_flutter
-      1.0.1
+      1.0.2
   </span>
   
 </footer>

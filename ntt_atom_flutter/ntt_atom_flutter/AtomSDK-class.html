@@ -57,9 +57,7 @@
 
     
 <section class="desc markdown">
-  <p>The Atom SDK class for handling payments.</p>
-<p>This class manages the payment flow, including starting transactions,
-navigating through the payment process, and handling transaction closures.</p>
+  <p>Singleton class for handling Atom Payment SDK functionalities.</p>
 </section>
 
 
@@ -69,16 +67,17 @@ navigating through the payment process, and handling transaction closures.</p>
     <h2>Constructors</h2>
     <dl class="constructor-summary-list">
         <dt id="AtomSDK" class="callable">
-          <span class="name"><a href="../ntt_atom_flutter/AtomSDK/AtomSDK.html">AtomSDK</a></span><span class="signature">({<span class="parameter" id="-param-onClose"><span>required</span> <span class="type-annotation">dynamic</span> <span class="parameter-name">onClose</span>(<span class="parameter" id="param-status"><span class="type-annotation"><a href="../ntt_atom_flutter/AtomTransactionStatus.html">AtomTransactionStatus</a></span> <span class="parameter-name">status</span>, </span><span class="parameter" id="param-data"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a></span> <span class="parameter-name">data</span></span>), </span><span class="parameter" id="-param-options"><span>required</span> <span class="type-annotation"><a href="../ntt_atom_flutter/AtomPaymentOptions-class.html">AtomPaymentOptions</a></span> <span class="parameter-name">options</span></span>})</span>
+          <span class="name"><a href="../ntt_atom_flutter/AtomSDK/AtomSDK.html">AtomSDK</a></span><span class="signature">()</span>
         </dt>
         <dd>
-          Creates an instance of <a href="../ntt_atom_flutter/AtomSDK-class.html">AtomSDK</a>.
+          Private constructor for singleton instance.
+            <div class="constructor-modifier features">factory</div>
         </dd>
     </dl>
   </section>
     
   <section
-      class="summary offset-anchor"
+      class="summary offset-anchor inherited"
       id="instance-properties">
     <h2>Properties</h2>
     <dl class="properties">
@@ -91,30 +90,6 @@ navigating through the payment process, and handling transaction closures.</p>
 <dd class="inherited">
   The hash code for this object.
   <div class="features"><span class="feature">no setter</span><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="onClose" class="property">
-  <span class="name"><a href="../ntt_atom_flutter/AtomSDK/onClose.html">onClose</a></span>
-  <span class="signature">&#8594; dynamic Function<span class="signature">(<span class="parameter" id="param-status"><span class="type-annotation"><a href="../ntt_atom_flutter/AtomTransactionStatus.html">AtomTransactionStatus</a></span> <span class="parameter-name">status</span>, </span><span class="parameter" id="param-data"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a></span> <span class="parameter-name">data</span></span>)</span></span>
-  
-
-</dt>
-<dd>
-  Callback function triggered when the transaction completes.
-  <div class="features"><span class="feature">final</span></div>
-
-</dd>
-
-        <dt id="options" class="property">
-  <span class="name"><a href="../ntt_atom_flutter/AtomSDK/options.html">options</a></span>
-  <span class="signature">&#8594; <a href="../ntt_atom_flutter/AtomPaymentOptions-class.html">AtomPaymentOptions</a></span>
-  
-
-</dt>
-<dd>
-  The payment options required for processing the transaction.
-  <div class="features"><span class="feature">final</span></div>
 
 </dd>
 
@@ -139,15 +114,15 @@ navigating through the payment process, and handling transaction closures.</p>
       id="instance-methods">
     <h2>Methods</h2>
     <dl class="callables">
-        <dt id="close" class="callable">
-  <span class="name"><a href="../ntt_atom_flutter/AtomSDK/close.html">close</a></span><span class="signature">(<wbr>{<span class="parameter" id="close-param-status"><span>required</span> <span class="type-annotation"><a href="../ntt_atom_flutter/AtomTransactionStatus.html">AtomTransactionStatus</a></span> <span class="parameter-name">status</span>, </span><span class="parameter" id="close-param-data"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a></span> <span class="parameter-name">data</span></span>})
+        <dt id="checkOut" class="callable">
+  <span class="name"><a href="../ntt_atom_flutter/AtomSDK/checkOut.html">checkOut</a></span><span class="signature">(<wbr>{<span class="parameter" id="checkOut-param-sdkOptions"><span>required</span> <span class="type-annotation"><a href="../ntt_atom_flutter/AtomPaymentOptions-class.html">AtomPaymentOptions</a></span> <span class="parameter-name">sdkOptions</span>, </span><span class="parameter" id="checkOut-param-onClose"><span>required</span> <span class="type-annotation">dynamic</span> <span class="parameter-name">onClose</span>(<span class="parameter" id="param-transactionStatus"><span class="type-annotation"><a href="../ntt_atom_flutter/AtomTransactionStatus.html">AtomTransactionStatus</a></span> <span class="parameter-name">transactionStatus</span>, </span><span class="parameter" id="param-data"><span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">data</span></span>)</span>})
     <span class="returntype parameter">&#8594; void</span>
   </span>
   
 
 </dt>
 <dd>
-  Closes the Atom SDK and triggers the <a href="../ntt_atom_flutter/AtomSDK/onClose.html">onClose</a> callback.
+  Initiates the payment checkout process.
   
 
 </dd>
@@ -162,19 +137,6 @@ navigating through the payment process, and handling transaction closures.</p>
 <dd class="inherited">
   Invoked when a nonexistent method or property is accessed.
   <div class="features"><span class="feature">inherited</span></div>
-
-</dd>
-
-        <dt id="startPayment" class="callable">
-  <span class="name"><a href="../ntt_atom_flutter/AtomSDK/startPayment.html">startPayment</a></span><span class="signature">(<wbr>)
-    <span class="returntype parameter">&#8594; <a href="https://api.flutter.dev/flutter/dart-core/Future-class.html">Future</a><span class="signature">&lt;<wbr><span class="type-parameter">void</span>&gt;</span></span>
-  </span>
-  
-
-</dt>
-<dd>
-  Starts the Atom payment process.
-  
 
 </dd>
 
@@ -218,21 +180,51 @@ navigating through the payment process, and handling transaction closures.</p>
   <section class="summary offset-anchor" id="static-properties">
     <h2>Static Properties</h2>
     <dl class="properties">
-        <dt id="atomNavigatorObserver" class="property">
-  <span class="name"><a href="../ntt_atom_flutter/AtomSDK/atomNavigatorObserver.html">atomNavigatorObserver</a></span>
+        <dt id="navigatorObserver" class="property">
+  <span class="name"><a href="../ntt_atom_flutter/AtomSDK/navigatorObserver.html">navigatorObserver</a></span>
   <span class="signature">&#8594; <a href="https://api.flutter.dev/flutter/widgets/NavigatorObserver-class.html">NavigatorObserver</a></span>
   
 
 </dt>
 <dd>
-  Provides access to the navigator observer.
+  Provides the navigator observer instance for the application.
   <div class="features"><span class="feature">no setter</span></div>
+
+</dd>
+
+        <dt id="options" class="property">
+  <span class="name"><a href="../ntt_atom_flutter/AtomSDK/options.html">options</a></span>
+  <span class="signature">&#8596; <a href="../ntt_atom_flutter/AtomPaymentOptions-class.html">AtomPaymentOptions</a></span>
+  
+
+</dt>
+<dd>
+  Holds the payment options for the transaction.
+  <div class="features"><span class="feature">getter/setter pair</span></div>
 
 </dd>
 
     </dl>
   </section>
     
+  <section class="summary offset-anchor" id="static-methods">
+    <h2>Static Methods</h2>
+    <dl class="callables">
+        <dt id="close" class="callable">
+  <span class="name"><a href="../ntt_atom_flutter/AtomSDK/close.html">close</a></span><span class="signature">(<wbr>{<span class="parameter" id="close-param-transactionStatus"><span>required</span> <span class="type-annotation"><a href="../ntt_atom_flutter/AtomTransactionStatus.html">AtomTransactionStatus</a></span> <span class="parameter-name">transactionStatus</span>, </span><span class="parameter" id="close-param-data"><span>required</span> <span class="type-annotation"><a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a></span>, <span class="type-parameter">dynamic</span>&gt;</span></span> <span class="parameter-name">data</span></span>})
+    <span class="returntype parameter">&#8594; void</span>
+  </span>
+  
+
+</dt>
+<dd>
+  Closes the Atom SDK transaction and triggers the <code>_onClose</code> callback.
+  
+
+</dd>
+
+    </dl>
+  </section>
     
 
   </div> <!-- /.main-content -->
@@ -258,7 +250,7 @@ navigating through the payment process, and handling transaction closures.</p>
 <footer>
   <span class="no-break">
     ntt_atom_flutter
-      1.0.1
+      1.0.2
   </span>
   
 </footer>

@@ -49,7 +49,9 @@
   <h1 id="ntt-atom-pay-flutter-sdk">NTT Atom Pay Flutter SDK</h1>
 <p>This Package Provides Simpler Integration For NTT Atom pay</p>
 <p>Example:</p>
-<pre class="language-dart"><code class="language-dart">import 'package:flutter/material.dart';
+<pre class="language-dart"><code class="language-dart">import 'dart:developer';
+
+import 'package:flutter/material.dart';
 import 'package:ntt_atom_flutter/ntt_atom_flutter.dart';
 
 void main() {
@@ -62,7 +64,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      navigatorObservers: [AtomSDK.atomNavigatorObserver],
+      navigatorObservers: [AtomSDK.navigatorObserver],
       home: Home(),
     );
   }
@@ -77,12 +79,9 @@ class Home extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            final AtomSDK instance = AtomSDK(
-              onClose: (status, data) {
-                print('Status $status');
-                print('Data $data');
-              },
-              options: AtomPaymentOptions(
+            final instance = AtomSDK();
+            instance.checkOut(
+              sdkOptions: AtomPaymentOptions(
                 login: '317157',
                 password: 'Test@123',
                 prodid: 'NSE',
@@ -109,8 +108,13 @@ class Home extends StatelessWidget {
                 mode: AtomPaymentMode.uat,
                 txnid: 'test240223',
               ),
+              onClose: (transactionStatus, data) {
+                log(
+                  "Transaction Status ${transactionStatus.name.toString()}\nTransaction Data ${data.toString()}",
+                  name: "ATOM Payment Status",
+                );
+              },
             );
-            instance.startPayment();
           },
           child: Text('Start Payment'),
         ),
@@ -118,58 +122,60 @@ class Home extends StatelessWidget {
     );
   }
 }
+
 </code></pre>
 <h2 id="usage">Usage</h2>
 <ol>
 <li>
 <p>add <code>AtomSDK.atomNavigatorObserver</code> in app navigatorObservers</p>
-<pre class="language-dart"><code class="language-dart">MaterialApp(
-  navigatorObservers: [AtomSDK.atomNavigatorObserver],
-  home: Home(),
-);
+<pre class="language-dart"><code class="language-dart">  MaterialApp(
+      navigatorObservers: [AtomSDK.navigatorObserver],
+      home: Home(),
+  )
 </code></pre>
 </li>
 <li>
-<p>initialize the object</p>
-<pre class="language-dart"><code class="language-dart">final AtomSDK instance = AtomSDK(
-            onClose: (status, data) {
-                print('Status $status');
-                print('Data $data');
-            },
-            options: AtomPaymentOptions(
-                login: '317157',
-                password: 'Test@123',
-                prodid: 'NSE',
-                requestHashKey: 'KEY1234567234',
-                responseHashKey: 'KEYRESP123657234',
-                requestEncryptionKey: 'A4476C2062FFA58980DC8F79EB6A799E',
-                responseDecryptionKey: '75AEF0FA1B94B3C10D4F5B268F757F11',
-                txncurr: 'INR',
-                amount: '400',
-                merchType: 'R',
-                mccCode: '5499',
-                clientcode: 'NAVIN',
-                address: 'mumbai',
-                custFirstName: 'test',
-                custLastName: 'test',
-                email: 'test@gmail.com',
-                mobile: '8888888888',
-                custacc: '639827',
-                udf1: 'udf1',
-                udf2: 'udf2',
-                udf3: 'udf3',
-                udf4: 'udf4',
-                udf5: 'udf5',
-                mode: AtomPaymentMode.uat,
-                txnid: 'test240223',
-                returnUrl: "dummy.com"
-            ),
+<p>Initialize the object</p>
+<pre class="language-dart"><code class="language-dart">final instance = AtomSDK();
+</code></pre>
+</li>
+<li>
+<p>Check Out</p>
+<pre class="language-dart"><code class="language-dart">  instance.checkOut(
+          sdkOptions: AtomPaymentOptions(
+            login: '317157',
+            password: 'Test@123',
+            prodid: 'NSE',
+            requestHashKey: 'KEY1234567234',
+            responseHashKey: 'KEYRESP123657234',
+            requestEncryptionKey: 'A4476C2062FFA58980DC8F79EB6A799E',
+            responseDecryptionKey: '75AEF0FA1B94B3C10D4F5B268F757F11',
+            txncurr: 'INR',
+            amount: '400',
+            merchType: 'R',
+            mccCode: '5499',
+            clientcode: 'NAVIN',
+            address: 'mumbai',
+            custFirstName: 'test',
+            custLastName: 'test',
+            email: 'test@gmail.com',
+            mobile: '8888888888',
+            custacc: '639827',
+            udf1: 'udf1',
+            udf2: 'udf2',
+            udf3: 'udf3',
+            udf4: 'udf4',
+            udf5: 'udf5',
+            mode: AtomPaymentMode.uat,
+            txnid: 'test240223',
+          ),
+          onClose: (transactionStatus, data) {
+            log(
+              "Transaction Status ${transactionStatus.name.toString()}\nTransaction Data ${data.toString()}",
+              name: "ATOM Payment Status",
+            );
+          },
         );
-</code></pre>
-</li>
-<li>
-<p>Start Payment</p>
-<pre class="language-dart"><code class="language-dart">  instance.startPayment();
 </code></pre>
 </li>
 </ol>
@@ -238,7 +244,7 @@ class Home extends StatelessWidget {
 <footer>
   <span class="no-break">
     ntt_atom_flutter
-      1.0.1
+      1.0.2
   </span>
   
 </footer>
