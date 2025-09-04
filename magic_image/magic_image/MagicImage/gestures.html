@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
-  <meta name="description" content="API docs for the onTertiaryTapDown property from the MagicImage class, for the Dart programming language.">
-  <title>onTertiaryTapDown property - MagicImage class - magic_image library - Dart API</title>
+  <meta name="description" content="API docs for the gestures property from the MagicImage class, for the Dart programming language.">
+  <title>gestures property - MagicImage class - magic_image library - Dart API</title>
 
 
   
@@ -27,23 +27,20 @@
     <li><a href="../../index.html">magic_image</a></li>
     <li><a href="../../magic_image/">magic_image.dart</a></li>
     <li><a href="../../magic_image/MagicImage-class.html">MagicImage</a></li>
-    <li class="self-crumb">onTertiaryTapDown property</li>
+    <li class="self-crumb">gestures property</li>
   </ol>
-  <div class="self-name">onTertiaryTapDown</div>
+  <div class="self-name">gestures</div>
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button" title="Toggle brightness">
-    <label for="theme">
-      <input type="checkbox" id="theme" value="light-theme">
-      <span id="dark-theme-button" class="material-symbols-outlined">
-        dark_mode
-      </span>
-      <span id="light-theme-button" class="material-symbols-outlined">
-        light_mode
-      </span>
-    </label>
-  </div>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
 </header>
 <main>
 <div
@@ -52,26 +49,34 @@
     data-above-sidebar="magic_image&#47;MagicImage-class-sidebar.html"
     data-below-sidebar="">
     <div>
-<h1><span class="kind-property">onTertiaryTapDown</span> property 
+<h1><span class="kind-property">gestures</span> property 
 </h1></div>
 
     
       <section class="multi-line-signature">
         
-        <a href="https://api.flutter.dev/flutter/gestures/GestureTapDownCallback.html">GestureTapDownCallback</a>?
-        <span class="name ">onTertiaryTapDown</span>
+        <a href="https://api.flutter.dev/flutter/dart-core/Map-class.html">Map</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/dart-core/Type-class.html">Type</a></span>, <span class="type-parameter"><a href="https://api.flutter.dev/flutter/widgets/GestureRecognizerFactory-class.html">GestureRecognizerFactory</a><span class="signature">&lt;<wbr><span class="type-parameter"><a href="https://api.flutter.dev/flutter/gestures/GestureRecognizer-class.html">GestureRecognizer</a></span>&gt;</span></span>&gt;</span>?
+        <span class="name ">gestures</span>
         <div class="features"><span class="feature">final</span></div>
 
       </section>
       
 <section class="desc markdown">
-  <p>Gesture callback for when a tertiary tap is recognized.</p>
+  <p>Use this to define gestures instead of individual callbacks.</p>
+<p>Example:</p>
+<pre class="language-dart"><code class="language-dart">gestures: {
+  TapGestureRecognizer: GestureRecognizerFactoryWithHandlers&lt;TapGestureRecognizer&gt;(
+    () =&gt; TapGestureRecognizer(),
+    (instance) =&gt; instance..onTap = () =&gt; print("Tapped!"),
+  )
+}
+</code></pre>
 </section>
 
       
 <section class="summary source-code" id="source">
   <h2><span>Implementation</span></h2>
-  <pre class="language-dart"><code class="language-dart">final GestureTapDownCallback? onTertiaryTapDown;</code></pre>
+  <pre class="language-dart"><code class="language-dart">final Map&lt;Type, GestureRecognizerFactory&gt;? gestures;</code></pre>
 </section>
 
 
@@ -88,7 +93,7 @@
     <li><a href="../../index.html">magic_image</a></li>
     <li><a href="../../magic_image/">magic_image</a></li>
     <li><a href="../../magic_image/MagicImage-class.html">MagicImage</a></li>
-    <li class="self-crumb">onTertiaryTapDown property</li>
+    <li class="self-crumb">gestures property</li>
 </ol>
 
   <h5>MagicImage class</h5>
@@ -100,7 +105,7 @@
 <footer>
   <span class="no-break">
     magic_image
-      0.0.4
+      1.0.1
   </span>
   
 </footer>

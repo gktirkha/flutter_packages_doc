@@ -31,17 +31,14 @@
   <form class="search navbar-right" role="search">
     <input type="text" id="search-box" autocomplete="off" disabled class="form-control typeahead" placeholder="Loading search...">
   </form>
-  <div class="toggle" id="theme-button" title="Toggle brightness">
-    <label for="theme">
-      <input type="checkbox" id="theme" value="light-theme">
-      <span id="dark-theme-button" class="material-symbols-outlined">
-        dark_mode
-      </span>
-      <span id="light-theme-button" class="material-symbols-outlined">
-        light_mode
-      </span>
-    </label>
-  </div>
+  <button class="toggle" id="theme-button" title="Toggle between light and dark mode" aria-label="Light and dark mode toggle">
+    <span id="dark-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      dark_mode
+    </span>
+    <span id="light-theme-button" class="material-symbols-outlined" aria-hidden="true">
+      light_mode
+    </span>
+  </button>
 </header>
 <main>
 <div
@@ -76,9 +73,9 @@ It provides various customization options such as fit, color, dimensions, and pl
 
 </dt>
 <dd>
-  A widget that displays an image from a given path, with support for both
-network and asset images, including SVG format. It also provides optional
-customization options like fit, color, dimensions, and placeholder/error widgets.
+  A versatile image widget that automatically handles
+asset, network, and local file images with support for
+both raster and SVG formats.
 </dd>
 
       </dl>
@@ -97,7 +94,8 @@ customization options like fit, color, dimensions, and placeholder/error widgets
 
 </dt>
 <dd>
-  Extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html"> String </a> to convert a string into a <a href="../magic_image/MagicImage-class.html"> MagicImage </a> widget.
+  Extension on <a href="https://api.flutter.dev/flutter/dart-core/String-class.html">String</a> to easily convert a URL or asset path
+into a <a href="../magic_image/MagicImage-class.html">MagicImage</a> widget.
 </dd>
 
       </dl>
@@ -134,7 +132,7 @@ customization options like fit, color, dimensions, and placeholder/error widgets
 <footer>
   <span class="no-break">
     magic_image
-      0.0.4
+      1.0.1
   </span>
   
 </footer>
